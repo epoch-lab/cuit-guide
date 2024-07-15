@@ -40,7 +40,10 @@ export default defineConfig({
       {
         text: "实验室",
         link: "/实验室/实验室.md",
-        items: [{ text: "回声开发实验室", link: "/实验室/epoch/回声开发实验室.md" }],
+        items: [
+          { text: "回声开发实验室", link: "/实验室/epoch/回声开发实验室.md" },
+          { text: "道格安全研究实验室", link: "/实验室/D0g3/道格安全研究实验室.md" },
+        ],
       },
     ],
 
