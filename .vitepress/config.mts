@@ -7,7 +7,7 @@ export default defineConfig({
   lang: 'zh-CN',
   themeConfig: {
     editLink: {
-      pattern: 'https://github.com/epoch-lab/cuit-guide/edit/main/docs/:path',
+      pattern: 'https://github.com/epoch-lab/cuit-guide/edit/main/:path',
       text: '在 GitHub 上编辑此页面',
     },
 
