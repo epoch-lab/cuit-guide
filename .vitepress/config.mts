@@ -37,12 +37,49 @@ export default defineConfig({
         text: "Intro",
         link: "/Readme.md",
       },
+
       {
         text: "实验室",
         link: "/实验室/实验室.md",
+        collapsed: false,
         items: [
           { text: "回声开发实验室", link: "/实验室/epoch/回声开发实验室.md" },
-          { text: "道格安全研究实验室", link: "/实验室/D0g3/道格安全研究实验室.md" },
+          {
+            text: "道格安全研究实验室",
+            link: "/实验室/D0g3/道格安全研究实验室.md",
+          },
+        ],
+      },
+      {
+        text: "学院概况",
+        collapsed: true,
+        items: [
+          {
+            text: "龙泉驿校区",
+            collapsed: false,
+            items: [
+              { text: "物流学院" },
+              { text: "管理学院" },
+              { text: "文化艺术学院" },
+              { text: "统计学院" },
+            ],
+          },
+          { text: "航空港校区",
+            collapsed: true,
+            items: [
+              {text: "大气科学学院"},
+              {text: "计算机学院"},
+              {text:"区块链产业学院" ,link:"/学院概况/航空港校区/区块链产业学院.md"},
+              {text: "软件工程学院"},
+              {text:"网络空间安全学院"},
+              {text:"自动化学院"},
+              {text:"电子工程学院"},
+              {text:"通信工程学院"},
+              {text:"光电工程学院"},
+              {text:"资源环境学院"},
+              {text:"外国语学院"}
+            ]
+           },
         ],
       },
     ],
