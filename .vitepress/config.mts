@@ -40,13 +40,13 @@ export default defineConfig({
 
       {
         text: "实验室",
-        link: "/实验室/实验室.md",
+        link: "/实验室/实验室",
         collapsed: false,
         items: [
-          { text: "回声开发实验室", link: "/实验室/epoch/回声开发实验室.md" },
+          { text: "回声开发实验室", link: "/实验室/epoch/回声开发实验室" },
           {
             text: "道格安全研究实验室",
-            link: "/实验室/D0g3/道格安全研究实验室.md",
+            link: "/实验室/D0g3/道格安全研究实验室",
           },
         ],
       },
@@ -69,7 +69,7 @@ export default defineConfig({
             items: [
               {text: "大气科学学院"},
               {text: "计算机学院"},
-              {text:"区块链产业学院" ,link:"/学院概况/航空港校区/区块链产业学院.md"},
+              {text:"区块链产业学院" ,link:"/学院概况/航空港校区/区块链产业学院"},
               {text: "软件工程学院"},
               {text:"网络空间安全学院"},
               {text:"自动化学院"},
