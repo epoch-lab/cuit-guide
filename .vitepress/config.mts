@@ -35,12 +35,12 @@ export default defineConfig({
     sidebar: [
       {
         text: "Intro",
-        link: "/intro",
+        link: "/Readme.md",
       },
       {
         text: "实验室",
         link: "/实验室/实验室.md",
-        items: [{ text: "回声开发实验室", link: "/实验室/回声开发实验室.md" }],
+        items: [{ text: "回声开发实验室", link: "/实验室/epoch/回声开发实验室.md" }],
       },
     ],
 

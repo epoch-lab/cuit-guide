@@ -17,3 +17,7 @@ git clone这里的链接:
 
 最后再发起合并请求
 ![pr](./static/pr.png)
+
+### 格式规范
+可以只创建文件夹和上传markdown文件; 剩下的交给我们来整理; 
+![alt text](./static/push.png)
