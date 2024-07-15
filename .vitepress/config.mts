@@ -11,11 +11,6 @@ export default defineConfig({
       text: '在 GitHub 上编辑此页面',
     },
 
-    footer: {
-      message: '根据 CC BY-NC-SA 4.0 许可发布',
-      copyright: `By Epoch Lab @ CUIT`,
-    },
-
     docFooter: {
       prev: '上一页',
       next: '下一页',
