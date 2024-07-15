@@ -132,3 +132,6 @@ dist
 # VitePress
 .vitepress/dist
 .vitepress/cache
+
+# Mac
+.DS_Store
