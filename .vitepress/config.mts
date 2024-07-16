@@ -51,6 +51,19 @@ export default defineConfig({
         ],
       },
       {
+        text: "学习相关",
+        collapsed: false,
+        items:[
+          {text:"选课",items:[]},
+          {text:"作业",items:[]},
+          {text:"期末",items:[]},
+          {text:"考研",items:[]},
+          {text:"就业",items:[]},
+          {text:"绩点",items:[]},
+          {text:"转专业",items:[]},
+        ]
+      },
+      {
         text: "学院概况",
         collapsed: true,
         items: [
