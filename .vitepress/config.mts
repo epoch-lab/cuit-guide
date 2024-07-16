@@ -69,6 +69,14 @@ export default defineConfig({
             text: "三叶草安全技术小组",
             link: "实验室/Syclover/三叶草安全技术小组",
           },
+          {
+            text: "数据结构与算法实验室",
+            link: "实验室/DSA/数据结构与算法实验室",
+          },
+          {
+            text: "ACM",
+            link: "实验室/ACM/ACM",
+          },
         ],
       },
       {
