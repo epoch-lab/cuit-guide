@@ -1,10 +1,28 @@
-import { defineConfig } from "vitepress";
-
+import { DefaultTheme, defineConfig, } from "vitepress";
+// import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar';
 // https://vitepress.dev/reference/site-config
+
+// const sidebarExample: DefaultTheme.SidebarItem[] = [
+
+//     ]
+
+
 export default defineConfig({
   title: "CUIT 指南",
   description: "CUIT 全攻略！",
   lang: "zh-CN",
+  // vite: {
+  //   plugins: [
+  //     // add plugin
+  //     AutoSidebar({
+  //       // You can also set options to adjust sidebar data
+  //       // see option document below
+  //       collapsed: false,
+  //       path:'/',
+  //       sideBarItemsResolved: ()=>sidebarExample,
+  //     })
+  //   ]
+  // },
   themeConfig: {
     editLink: {
       pattern: "https://github.com/epoch-lab/cuit-guide/edit/main/:path",
@@ -121,4 +139,5 @@ export default defineConfig({
       { icon: "github", link: "https://github.com/epoch-lab/cuit-guide" },
     ],
   },
+
 });
