@@ -67,7 +67,7 @@ export default defineConfig({
           },
           {
             text: "三叶草安全技术小组",
-            link: "实验室/Syclover/三叶草安全技术小组.md",
+            link: "实验室/Syclover/三叶草安全技术小组",
           },
         ],
       },
