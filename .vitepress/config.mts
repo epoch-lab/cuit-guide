@@ -34,10 +34,27 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: "Intro",
+        text: "这是做什么的?",
         link: "/Readme.md",
       },
-
+      {
+        text: "学习相关",
+        collapsed: false,
+        items: [
+          { text: "选课", items: [] },
+          { text: "作业", items: [] },
+          { text: "期末", items: [] },
+          { text: "考研", items: [] },
+          { text: "就业", items: [] },
+          { text: "绩点", items: [] },
+          { text: "转专业", items: [] },
+        ],
+      },
+      {
+        text: "校级组织",
+        collapsed: false,
+        items: [{ text: "校团委融媒体中心" }],
+      },
       {
         text: "实验室",
         link: "/实验室/实验室",
@@ -52,19 +69,6 @@ export default defineConfig({
             text: "三叶草安全技术小组",
             link: "实验室/Syclover/三叶草安全技术小组.md",
           },
-        ],
-      },
-      {
-        text: "学习相关",
-        collapsed: false,
-        items: [
-          { text: "选课", items: [] },
-          { text: "作业", items: [] },
-          { text: "期末", items: [] },
-          { text: "考研", items: [] },
-          { text: "就业", items: [] },
-          { text: "绩点", items: [] },
-          { text: "转专业", items: [] },
         ],
       },
       {
