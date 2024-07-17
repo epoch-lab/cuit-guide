@@ -120,6 +120,10 @@ export default defineConfig({
             link: "实验室/Syclover/三叶草安全技术小组",
           },
           {
+            text:"异步开发实验室",
+            link:"实验室/Async/异步开发实验室"
+          },
+          {
             text: "数据结构与算法实验室",
             link: "实验室/DSA/数据结构与算法实验室",
           },
@@ -135,7 +139,7 @@ export default defineConfig({
           {text:"学生回声开发实验室",link:"/实验室/Epoch/回声开发实验室"},
           {text:"学生道格安全研究实验室",link:"/实验室/D0g3/道格安全研究实验室"},
           {text:"学生三叶草技术小组",link:"实验室/Syclover/三叶草安全技术小组"},
-          {text:"学生异步开发实验室",link:""},
+          {text:"学生异步开发实验室",link:"实验室/Async/异步开发实验室"},
         ]
       },
       {
