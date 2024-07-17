@@ -96,7 +96,10 @@ export default defineConfig({
       {
         text: "校级组织",
         collapsed: false,
-        items: [{ text: "校团委融媒体中心" }],
+        items: [
+          { text: "校团委融媒体中心" },
+          { text: "校团委社团管理部" }
+        ],
       },
       {
         text: "实验室",
@@ -121,6 +124,14 @@ export default defineConfig({
             link: "实验室/ACM/ACM",
           },
         ],
+      },
+      {
+        text:"社团",
+        item:[
+          {text:"学生回声实验室",link:"/实验室/Epoch/回声开发实验室"},
+          {text:"学生回声实验室",link:"/实验室/Epoch/回声开发实验室"},
+          {text:"学生回声实验室",link:"/实验室/Epoch/回声开发实验室"},
+        ]
       },
       {
         text: "学院概况",
