@@ -1,10 +1,29 @@
-import { defineConfig } from "vitepress";
-
+import { DefaultTheme, defineConfig, } from "vitepress";
+// import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar';
 // https://vitepress.dev/reference/site-config
+
+// const sidebarExample: DefaultTheme.SidebarItem[] = [
+
+//     ]
+
+
 export default defineConfig({
   title: "CUIT 指南",
   description: "CUIT 全攻略！",
   lang: "zh-CN",
+  // vite: {
+  //   plugins: [
+  //     // add plugin
+  //     AutoSidebar({
+  //       // You can also set options to adjust sidebar data
+  //       // see option document below
+  //       collapsed: false,
+  //       path:'/',
+  //       sideBarItemsResolved: ()=>sidebarExample,
+  //     })
+  //   ]
+  // },
+  head: [['link', { rel: 'icon', href: '/static/logo.svg' }]],
   themeConfig: {
     editLink: {
       pattern: "https://github.com/epoch-lab/cuit-guide/edit/main/:path",
@@ -36,6 +55,12 @@ export default defineConfig({
       {
         text: "这是做什么的?",
         link: "/Readme.md",
+      },{
+        text: "地图",
+        items:[
+          {text:"航空港校区",link:"/地图/校园地图/航空港校区/航空港地图.md"},
+          {text:"龙泉驿校区",link:"/地图/校园地图/龙泉驿校区"},
+        ]
       },
       {
         text: "学习相关",
@@ -49,6 +74,24 @@ export default defineConfig({
           { text: "绩点", items: [] },
           { text: "转专业", items: [] },
         ],
+      },
+      {
+        text:"认知",
+        items:[
+          {text:"如何提问",items:[]},
+        ]
+      },
+      {
+        text:"常见的基本信息",
+        items:[
+          {text:"cuit学校邮箱有什么用?"}
+        ]
+      },
+      {
+        text:"友链",
+        items:[
+          {text:"cuit_shring"}
+        ]
       },
       {
         text: "校级组织",
@@ -121,4 +164,5 @@ export default defineConfig({
       { icon: "github", link: "https://github.com/epoch-lab/cuit-guide" },
     ],
   },
+
 });
