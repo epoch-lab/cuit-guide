@@ -71,7 +71,9 @@ export default defineConfig({
           { text: "作业", items: [] },
           { text: "期末", items: [] },
           { text: "考研", items: [] },
-          { text: "就业", items: [] },
+          { text: "就业", items: [
+            {text: "如何准备算法", link:"/学习相关/就业/如何准备算法"},
+          ] },
           { text: "绩点", items: [] },
           { text: "转专业", items: [] },
         ],
