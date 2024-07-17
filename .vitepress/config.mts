@@ -57,6 +57,7 @@ export default defineConfig({
         link: "/Readme.md",
       },{
         text: "地图",
+        collapsed: false,
         items:[
           {text:"航空港校区",link:"/地图/校园地图/航空港校区/航空港地图.md"},
           {text:"龙泉驿校区",link:"/地图/校园地图/龙泉驿校区"},
@@ -77,18 +78,21 @@ export default defineConfig({
       },
       {
         text:"认知",
+        collapsed: false,
         items:[
           {text:"如何提问",items:[]},
         ]
       },
       {
         text:"常见的基本信息",
+        collapsed: false,
         items:[
           {text:"cuit学校邮箱有什么用?"}
         ]
       },
       {
         text:"友链",
+        collapsed: false,
         items:[
           {text:"cuit_shring"}
         ]
@@ -128,9 +132,10 @@ export default defineConfig({
       {
         text:"社团",
         item:[
-          {text:"学生回声实验室",link:"/实验室/Epoch/回声开发实验室"},
-          {text:"学生回声实验室",link:"/实验室/Epoch/回声开发实验室"},
-          {text:"学生回声实验室",link:"/实验室/Epoch/回声开发实验室"},
+          {text:"学生回声开发实验室",link:"/实验室/Epoch/回声开发实验室"},
+          {text:"学生道格安全研究实验室",link:"/实验室/D0g3/道格安全研究实验室"},
+          {text:"学生三叶草技术小组",link:"实验室/Syclover/三叶草安全技术小组"},
+          {text:"学生异步开发实验室",link:""},
         ]
       },
       {
