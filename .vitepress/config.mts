@@ -84,7 +84,7 @@ export default defineConfig({
       {
         text: "学习相关",
         collapsed: false,
-        link:"/学习相关/index.md",
+        link: "/学习相关/index.md",
         items: [
           {
             text: "技术",
@@ -122,7 +122,7 @@ export default defineConfig({
       {
         text: "资源",
         collapsed: false,
-        link:"/资源/index.md",
+        link: "/资源/index.md",
         items: [
           {
             text: "前端",
@@ -151,6 +151,22 @@ export default defineConfig({
         items: [
           { text: "cuit_shring", link: "/友链/cuit_shring/cuit_sharing.md" },
           { text: "UneedRun", link: "/友链/UneedRun/UneedRun.md" },
+        ],
+      },
+      {
+        text: "Book",
+        collapsed: false,
+        link: "/Book/index.md",
+        items: [
+          {
+            text: "计算机基础",
+            items: [
+              {
+                text: "使用git",
+                link: "/Books/计算机基础/使用git.md",
+              },
+            ],
+          },
         ],
       },
       {
