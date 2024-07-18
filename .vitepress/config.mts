@@ -114,7 +114,7 @@ export default defineConfig({
       {
         text: "常见的基本信息",
         collapsed: false,
-        items: [{ text: "cuit学校邮箱有什么用?" }],
+        items: [{ text: "cuit学校邮箱有什么用?",link:"常见的基本信息/cuit学校邮箱/cuit学校邮箱.md" }],
       },
       {
         text: "友链",
