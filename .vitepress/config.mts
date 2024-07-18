@@ -114,12 +114,21 @@ export default defineConfig({
       {
         text: "常见的基本信息",
         collapsed: false,
-        items: [{ text: "cuit学校邮箱有什么用?",link:"常见的基本信息/cuit学校邮箱/cuit学校邮箱.md" }],
+        items: [
+          {
+            text: "cuit学校邮箱有什么用?",
+            link: "常见的基本信息/cuit学校邮箱/cuit学校邮箱.md",
+          },
+        ],
       },
       {
         text: "友链",
         collapsed: false,
-        items: [{ text: "cuit_shring" }],
+        link: "/友链/index.md",
+        items: [
+          { text: "cuit_shring", link: "/友链/cuit_shring/cuit_sharing.md" },
+          { text: "UneedRun", link: "/友链/UneedRun/UneedRun.md" },
+        ],
       },
       {
         text: "校级组织",
