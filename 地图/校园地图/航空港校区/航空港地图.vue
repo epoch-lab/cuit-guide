@@ -3,6 +3,7 @@ import { onMounted, onUnmounted } from "vue";
 console.log("航空港地图");
 
 const loadMap = async () => {
+  // 不这样引入, 会报错; 
   const AMapLoader = await import("@amap/amap-jsapi-loader");
   try {
     const AMap = await AMapLoader.load({
