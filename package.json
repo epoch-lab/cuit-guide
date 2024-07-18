@@ -4,7 +4,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vitepress dev",
-    "docs:build": "vitepress build",
+    "build": "vitepress build",
     "docs:preview": "vitepress preview"
   },
   "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903",
@@ -15,6 +15,7 @@
     "vue": "^3.4.31"
   },
   "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
     "vite-plugin-vitepress-auto-sidebar": "^1.6.5"
   }
 }

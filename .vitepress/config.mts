@@ -29,6 +29,9 @@ export default defineConfig({
       pattern: "https://github.com/epoch-lab/cuit-guide/edit/main/:path",
       text: "在 GitHub 上编辑此页面",
     },
+    search: {
+      provider: 'local'
+    },
 
     docFooter: {
       prev: "上一页",
@@ -60,7 +63,7 @@ export default defineConfig({
         collapsed: false,
         items:[
           {text:"航空港校区",link:"/地图/校园地图/航空港校区/航空港地图.md"},
-          {text:"龙泉驿校区",link:"/地图/校园地图/龙泉驿校区"},
+          {text:"龙泉驿校区",link:"/地图/校园地图/龙泉驿校区/龙泉驿地图.md"},
         ]
       },
       {
