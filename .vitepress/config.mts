@@ -84,6 +84,7 @@ export default defineConfig({
       {
         text: "学习相关",
         collapsed: false,
+        link:"/学习相关/index.md",
         items: [
           {
             text: "技术",
@@ -121,6 +122,7 @@ export default defineConfig({
       {
         text: "资源",
         collapsed: false,
+        link:"/资源/index.md",
         items: [
           {
             text: "前端",
