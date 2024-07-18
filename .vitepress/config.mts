@@ -10,6 +10,7 @@ export default defineConfig({
   title: "CUIT 指南",
   description: "CUIT 全攻略！",
   lang: "zh-CN",
+  ignoreDeadLinks: true, // 防止因死链而失败
   // vite: {
   //   plugins: [
   //     // add plugin
@@ -84,8 +85,14 @@ export default defineConfig({
         text: "学习相关",
         collapsed: false,
         items: [
+          {
+            text: "技术",
+            items: [
+              { text: "算法", link: "/学习相关/技术/算法/hello-algo" },
+              { text: "CTF", link: "/学习相关/技术/CTF/hello_ctf" },
+            ],
+          },
           { text: "选课", items: [] },
-          { text: "作业", items: [] },
           { text: "期末", items: [] },
           { text: "考研", items: [] },
           {
@@ -108,6 +115,20 @@ export default defineConfig({
           {
             text: "提问的智慧",
             link: "/认知/如何提问/README-zh_CN.md",
+          },
+        ],
+      },
+      {
+        text: "资源",
+        collapsed: false,
+        items: [
+          {
+            text: "前端",
+            items: [{ text: "组件库", link: "/资源/前端/组件库.md" }],
+          },
+          {
+            text: "常用工具",
+            items: [],
           },
         ],
       },

@@ -13,7 +13,7 @@ hero:
 
 features:
   - title: 这里有什么?
-    details: 本文档可收录的内容可以涉及CUIT的方方面面, 你可以PR任何你觉得有关CUIT的东西; 
+    details: 本文档可收录的内容可以涉及CUIT的方方面面, 你可以PR任何你觉得有关CUIT的东西; 不是CUIT的也可, 只要你觉得有益; 
   - title: 性质声明
     details: 本文档纯公益性质且开源, 不用于商业用途; 
   - title: 如何参与?
