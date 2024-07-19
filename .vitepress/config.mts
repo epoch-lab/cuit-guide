@@ -112,6 +112,10 @@ export default defineConfig({
                   },
                 ],
               },
+              { text: "回声考研合集", items: [] },
+              {text:"DSA考研合集", items:[
+                {text:"DSA考研经验分享",link:"/学习相关/考研/DSA考研合集/test"}
+              ]}
             ],
           },
           {
@@ -191,7 +195,7 @@ export default defineConfig({
         text: "校级组织",
         collapsed: false,
         items: [
-          { text: "党委宣传部融媒体中心", link: "/融媒体中心/融媒体中心" },
+          { text: "党委宣传部融媒体中心", link: "/校级组织/党委宣传部融媒体中心/融媒体中心" },
           { text: "校团委社团管理部" },
         ],
       },
