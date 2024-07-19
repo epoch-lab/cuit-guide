@@ -11,7 +11,7 @@ export default defineConfig({
   description: "CUIT 全攻略！",
   lang: "zh-CN",
   ignoreDeadLinks: true, // 防止因死链而失败
-  
+
   // vite: {
   //   plugins: [
   //     // add plugin
@@ -66,7 +66,7 @@ export default defineConfig({
     sidebar: [
       {
         text: "这是做什么的?",
-        link: "/Readme.md",
+        link: "/Readme",
       },
       {
         text: "地图",
@@ -74,18 +74,18 @@ export default defineConfig({
         items: [
           {
             text: "航空港校区",
-            link: "/地图/校园地图/航空港校区/航空港地图.md",
+            link: "/地图/校园地图/航空港校区/航空港地图",
           },
           {
             text: "龙泉驿校区",
-            link: "/地图/校园地图/龙泉驿校区/龙泉驿地图.md",
+            link: "/地图/校园地图/龙泉驿校区/龙泉驿地图",
           },
         ],
       },
       {
         text: "学习相关",
         collapsed: false,
-        link: "/学习相关/index.md",
+        link: "/学习相关/index",
         items: [
           {
             text: "技术",
@@ -96,7 +96,24 @@ export default defineConfig({
           },
           { text: "选课", items: [] },
           { text: "期末", items: [] },
-          { text: "考研", items: [] },
+          {
+            text: "考研",
+            items: [
+              {
+                text: "19级马学长",
+                items: [
+                  {
+                    text: "一丢丢考研建议",
+                    link: "/学习相关/考研/19级马学长上岸西南交大/一丢丢考研建议",
+                  },
+                  {
+                    text: "复试面试建议",
+                    link: "/学习相关/考研/19级马学长上岸西南交大/复试面试建议",
+                  },
+                ],
+              },
+            ],
+          },
           {
             text: "就业",
             items: [
@@ -116,18 +133,18 @@ export default defineConfig({
         items: [
           {
             text: "提问的智慧",
-            link: "/认知/如何提问/README-zh_CN.md",
+            link: "/认知/如何提问/README-zh_CN",
           },
         ],
       },
       {
         text: "资源",
         collapsed: false,
-        link: "/资源/index.md",
+        link: "/资源/index",
         items: [
           {
             text: "前端",
-            items: [{ text: "组件库", link: "/资源/前端/组件库.md" }],
+            items: [{ text: "组件库", link: "/资源/前端/组件库" }],
           },
           {
             text: "常用工具",
@@ -141,30 +158,30 @@ export default defineConfig({
         items: [
           {
             text: "cuit学校邮箱有什么用?",
-            link: "常见的基本信息/cuit学校邮箱/cuit学校邮箱.md",
+            link: "常见的基本信息/cuit学校邮箱/cuit学校邮箱",
           },
         ],
       },
       {
         text: "友链",
         collapsed: false,
-        link: "/友链/index.md",
+        link: "/友链/index",
         items: [
-          { text: "cuit_shring", link: "/友链/cuit_shring/cuit_sharing.md" },
-          { text: "UneedRun", link: "/友链/UneedRun/UneedRun.md" },
+          { text: "cuit_shring", link: "/友链/cuit_shring/cuit_sharing" },
+          { text: "UneedRun", link: "/友链/UneedRun/UneedRun" },
         ],
       },
       {
         text: "Book",
         collapsed: false,
-        link: "/Book/index.md",
+        link: "/Book/index",
         items: [
           {
             text: "计算机基础",
             items: [
               {
                 text: "使用git",
-                link: "/Books/计算机基础/使用git.md",
+                link: "/Books/计算机基础/使用git",
               },
             ],
           },
@@ -173,7 +190,10 @@ export default defineConfig({
       {
         text: "校级组织",
         collapsed: false,
-        items: [{ text: "党委宣传部融媒体中心",link:"/融媒体中心/融媒体中心.md" }, { text: "校团委社团管理部" }],
+        items: [
+          { text: "党委宣传部融媒体中心", link: "/融媒体中心/融媒体中心" },
+          { text: "校团委社团管理部" },
+        ],
       },
       {
         text: "实验室",
