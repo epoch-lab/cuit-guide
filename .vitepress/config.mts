@@ -11,6 +11,7 @@ export default defineConfig({
   description: "CUIT 全攻略！",
   lang: "zh-CN",
   ignoreDeadLinks: true, // 防止因死链而失败
+  
   // vite: {
   //   plugins: [
   //     // add plugin
@@ -172,7 +173,7 @@ export default defineConfig({
       {
         text: "校级组织",
         collapsed: false,
-        items: [{ text: "校团委融媒体中心" }, { text: "校团委社团管理部" }],
+        items: [{ text: "党委宣传部融媒体中心",link:"/融媒体中心/融媒体中心.md" }, { text: "校团委社团管理部" }],
       },
       {
         text: "实验室",
