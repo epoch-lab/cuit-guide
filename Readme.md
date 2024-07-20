@@ -20,6 +20,8 @@ git clone这里的链接:
 最后再发起合并请求
 ![pr](./static/pr.png)
 
+如果是略懂前端的小伙伴, 烦请在代码修改之后, 提交之前先build一下, 否则过不了CI/CD哦!
+
 ### 如何插入图片?
 可以打包成一个文件夹
 ![alt text](./static/push.png)
