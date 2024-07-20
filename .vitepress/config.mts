@@ -113,9 +113,15 @@ export default defineConfig({
                 ],
               },
               { text: "回声考研合集", items: [] },
-              {text:"DSA考研合集", items:[
-                {text:"DSA考研经验分享",link:"/学习相关/考研/DSA考研合集/test"}
-              ]}
+              {
+                text: "DSA考研合集",
+                items: [
+                  {
+                    text: "DSA考研经验分享",
+                    link: "/学习相关/考研/DSA考研合集/test",
+                  },
+                ],
+              },
             ],
           },
           {
@@ -152,7 +158,11 @@ export default defineConfig({
           },
           {
             text: "常用工具",
-            items: [],
+            items: [
+              { text: "国内大模型", link: "/资源/常用工具/国内大模型" },
+              { text: "流程图制作", link: "/资源/常用工具/流程图制作" },
+              { text: "文件格式转换", link: "/资源/常用工具/文件格式转换.md" },
+            ],
           },
         ],
       },
@@ -195,7 +205,10 @@ export default defineConfig({
         text: "校级组织",
         collapsed: false,
         items: [
-          { text: "党委宣传部融媒体中心", link: "/校级组织/党委宣传部融媒体中心/融媒体中心" },
+          {
+            text: "党委宣传部融媒体中心",
+            link: "/校级组织/党委宣传部融媒体中心/融媒体中心",
+          },
           { text: "校团委社团管理部" },
         ],
       },
