@@ -1,8 +1,8 @@
 <script setup>
-import { onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 console.log("龙泉驿地图");
 // import AMapLoader from "@amap/amap-jsapi-loader";
-
+const map = ref(null); // 声明一个响应式引用
 
 const loadMap = async () => {
   const AMapLoader = await import("@amap/amap-jsapi-loader");
@@ -12,17 +12,18 @@ const loadMap = async () => {
       version: "2.0",
       plugins: ["AMap.Scale"],
     });
-    const map = new AMap.Map("container", {
+    map.value = new AMap.Map("container", {
       // 设置地图容器id
       viewMode: "3D", // 是否为3D地图模式
       zoom: 17.5, // 初始化地图级别
       center: [104.305406, 30.606364], // 初始化地图中心点位置
       terrain: true, //开启地形图
+      rotation: -25, //地图顺时针旋转角度,修正校区位置
     });
   } catch (e) {
     console.log(e);
   }
-}
+};
 onMounted(async () => {
   if (typeof window !== "undefined") {
     window._AMapSecurityConfig = {
@@ -34,7 +35,7 @@ onMounted(async () => {
 });
 
 onUnmounted(() => {
-  map?.destroy();
+  map.value.destroy();
 });
 </script>
 
