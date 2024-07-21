@@ -157,6 +157,10 @@ export default defineConfig({
             items: [{ text: "组件库", link: "/资源/前端/组件库" }],
           },
           {
+            text:"冒险",
+            link:"/资源/冒险/新的探险"
+          },
+          {
             text: "常用工具",
             items: [
               { text: "国内大模型", link: "/资源/常用工具/国内大模型" },
