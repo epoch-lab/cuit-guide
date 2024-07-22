@@ -147,9 +147,15 @@ export default defineConfig({
             ],
           },
           { text: "绩点", items: [] },
-          { text: "转专业", items: [
-            {text:"回声21级猫猫", link:"/学习相关/转专业/回声21级猫猫/猫猫的转专业经历"}
-          ] },
+          {
+            text: "转专业",
+            items: [
+              {
+                text: "回声21级猫猫",
+                link: "/学习相关/转专业/回声21级猫猫/猫猫的转专业经历",
+              },
+            ],
+          },
         ],
       },
       {
@@ -250,6 +256,10 @@ export default defineConfig({
             link: "实验室/Async/异步开发实验室",
           },
           {
+            text: "非同凡想游戏开发协会",
+            link: "实验室/TDS/非同凡想游戏开发协会",
+          },
+          {
             text: "数据结构与算法实验室",
             link: "实验室/DSA/数据结构与算法实验室",
           },
@@ -257,10 +267,6 @@ export default defineConfig({
             text: "ACM",
             link: "实验室/ACM/ACM",
           },
-          {
-            text: "非同凡想游戏开发协会",
-            link: "实验室/TDS/非同凡想游戏开发协会",
-          }
         ],
       },
       {
@@ -279,7 +285,7 @@ export default defineConfig({
           {
             text: "学生非同凡想游戏开发协会",
             link: "实验室/TDS/非同凡想游戏开发协会",
-          }
+          },
         ],
       },
       {
