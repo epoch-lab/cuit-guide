@@ -11,7 +11,7 @@ export default defineConfig({
   description: "CUIT 全攻略！",
   lang: "zh-CN",
   ignoreDeadLinks: true, // 防止因死链而失败
-
+  lastUpdated: true,
   // vite: {
   //   plugins: [
   //     // add plugin
@@ -112,7 +112,20 @@ export default defineConfig({
                   },
                 ],
               },
-              { text: "回声考研合集", items: [] },
+              {
+                text: "回声考研合集",
+                items: [
+                  {
+                    text: "经验分享(24届李学长)",
+                    link: "/学习相关/考研/回声考研合集/经验分享(24届李学长)",
+                  },
+                  {
+                    text: "杭电考研经验贴(24届李学姐)",
+                    link: "/学习相关/考研/回声考研合集/杭电考研经验贴(24届李学姐)",
+                  },
+                ],
+              },
+
               {
                 text: "DSA考研合集",
                 items: [
@@ -134,7 +147,9 @@ export default defineConfig({
             ],
           },
           { text: "绩点", items: [] },
-          { text: "转专业", items: [] },
+          { text: "转专业", items: [
+            {text:"回声21级猫猫", link:"/学习相关/转专业/回声21级猫猫/猫猫的转专业经历"}
+          ] },
         ],
       },
       {
@@ -157,8 +172,8 @@ export default defineConfig({
             items: [{ text: "组件库", link: "/资源/前端/组件库" }],
           },
           {
-            text:"冒险",
-            link:"/资源/冒险/新的探险"
+            text: "冒险",
+            link: "/资源/冒险/新的探险",
           },
           {
             text: "常用工具",
