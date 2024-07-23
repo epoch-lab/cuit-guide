@@ -287,6 +287,10 @@ export default defineConfig({
             text: "数据结构与算法实验室",
             link: "实验室/DSA/数据结构与算法实验室",
           },
+          {
+            text: "Metacrypto",
+            link: "实验室/Metacrypto/index",
+          },
         ],
       },
       {
