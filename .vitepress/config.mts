@@ -186,7 +186,23 @@ export default defineConfig({
             items: [
               { text: "国内大模型", link: "/资源/常用工具/国内大模型" },
               { text: "流程图制作", link: "/资源/常用工具/流程图制作" },
-              { text: "文件格式转换", link: "/资源/常用工具/文件格式转换.md" },
+              { text: "文件格式转换", link: "/资源/常用工具/文件格式转换" },
+            ],
+          },
+        ],
+      },
+      {
+        text: "引用的外部资源",
+        link: "/引用的外部资源/index",
+        items: [
+          {
+            text: "《上海交通大学生存指南》",
+            link: "/引用的外部资源/《上海交通大学生存指南》/index",
+            items: [
+              {
+                text: "突击备考",
+                link: "/引用的外部资源/《上海交通大学生存指南》/突击备考/突击备考",
+              },
             ],
           },
         ],
@@ -223,6 +239,10 @@ export default defineConfig({
                 link: "/Books/计算机基础/使用git",
               },
             ],
+          },
+          {
+            text: "计算机自学指南",
+            link:"/Books/计算机自学指南/index"
           },
         ],
       },
