@@ -285,7 +285,7 @@ export default defineConfig({
           },
           {
             text: "ACM",
-            link: "实验室/ACM/ACM",
+            link: "实验室/ACM/ACM算法实验室",
           },
         ],
       },
