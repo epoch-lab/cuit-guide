@@ -284,8 +284,8 @@ export default defineConfig({
             link: "实验室/DSA/数据结构与算法实验室",
           },
           {
-            text: "ACM",
-            link: "实验室/ACM/ACM算法实验室",
+            text: "ACM算法实验室",
+            link: "实验室/ACM/ACM",
           },
         ],
       },
