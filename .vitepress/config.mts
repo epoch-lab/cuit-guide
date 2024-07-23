@@ -242,7 +242,7 @@ export default defineConfig({
           },
           {
             text: "计算机自学指南",
-            link:"/Books/计算机自学指南/index"
+            link: "/Books/计算机自学指南/index",
           },
         ],
       },
@@ -280,12 +280,12 @@ export default defineConfig({
             link: "实验室/TDS/非同凡想游戏开发协会",
           },
           {
-            text: "数据结构与算法实验室",
-            link: "实验室/DSA/数据结构与算法实验室",
-          },
-          {
             text: "ACM算法实验室",
             link: "实验室/ACM/ACM",
+          },
+          {
+            text: "数据结构与算法实验室",
+            link: "实验室/DSA/数据结构与算法实验室",
           },
         ],
       },
