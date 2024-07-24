@@ -1,6 +1,6 @@
 # 这是做什么的?
 
-成都信息工程大学(Chengdu University of InformaTion, 简称 CUIT, 或者~~信砖~~,~~驾校~~)指南是一个公益性质的项目的文档项目;
+成都信息工程大学(Chengdu University of Information Technology, 简称 CUIT, 或者~~信砖~~,~~驾校~~)指南是一个公益性质的项目的文档项目;
 
 目的是帮助新入学的 CUITer 迅速熟悉 cuit 的方方面面, 从获得上大学后应该有的认知到参与各种具体的组织以及实验室/社团/同好等等, 从学习基本知识到了解成信大的所有;
 
