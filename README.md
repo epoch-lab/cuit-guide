@@ -10,12 +10,17 @@
 ![如何参与](./static/fork.png)
 
 再将项目拉到本地()
+
 git clone 这里的链接:
+
 ![拉到本地](./static/clone.png)
 
 直接修改文件夹, 添加 markdown 即可;
 
+注意：引用的图片文件名最好是全英文！
+
 最后再发起合并请求
+
 ![pr](./static/pr.png)
 
 如果是略懂前端的小伙伴, 烦请在代码修改之后, 提交之前先 build 一下, 否则过不了 CI/CD 哦!
