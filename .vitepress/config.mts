@@ -66,7 +66,7 @@ export default defineConfig({
     sidebar: [
       {
         text: "这是做什么的?",
-        link: "/Readme",
+        link: "/README",
       },
       {
         text: "地图",
