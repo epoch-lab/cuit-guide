@@ -44,4 +44,4 @@ git clone 这里的链接:
 
 回声公众群: 834932567
 
-![Visitor Counter](https://count.getloli.com/get/cuit-guide)
+![Visitor Counter](https://count.getloli.com/get/@cuit-guide?theme=moebooru)
