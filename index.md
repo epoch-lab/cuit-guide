@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /Readme.md
+      link: /README
 
 features:
   - title: 这里有什么?
@@ -18,7 +18,7 @@ features:
     details: 本文档纯公益性质且开源, 不用于商业用途; 
   - title: 如何参与?
     details: 有git以及markdown基础的同学可以直接参与PR(Pull Request, 合并请求), 如不懂, 请联系管理员; 
-    link: /Readme
+    link: /README
   - title: 学习技术/考研/实习/就业
     details: 一切学习相关的, 这里统统都有! 
     link: /学习相关/index
