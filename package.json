@@ -16,7 +16,6 @@
     "vue": "^3.4.31"
   },
   "dependencies": {
-    "@amap/amap-jsapi-loader": "^1.0.1",
-    "vite-plugin-vitepress-auto-sidebar": "^1.6.5"
+    "@amap/amap-jsapi-loader": "^1.0.1"
   }
 }

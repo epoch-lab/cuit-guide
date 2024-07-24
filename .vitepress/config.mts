@@ -51,6 +51,7 @@ export default defineConfig({
       collapsed: true,
       collapseDepth: 2,
       useFolderLinkFromIndexFile: true,
+      excludeFolders: ['vue-test'],
     }),
 
     socialLinks: [
