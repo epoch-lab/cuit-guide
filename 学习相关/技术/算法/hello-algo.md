@@ -1,6 +1,6 @@
-搬运自: https://github.com/krahets/hello-algo/?tab=readme-ov-file
+搬运自：https://github.com/krahets/hello-algo/?tab=readme-ov-file
 
-在线阅读: https://www.hello-algo.com/
+在线阅读：https://www.hello-algo.com/
 
 
 <p align="center">

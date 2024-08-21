@@ -4,7 +4,7 @@ console.log("航空港地图");
 const map = ref(null); // 声明一个响应式引用
 
 const loadMap = async () => {
-  // 不这样引入, 会报错;
+  // 不这样引入，会报错;
   const AMapLoader = await import("@amap/amap-jsapi-loader");
   try {
     const AMap = await AMapLoader.load({
@@ -13,12 +13,12 @@ const loadMap = async () => {
       plugins: ["AMap.Scale"],
     });
     map.value = new AMap.Map("container", {
-      // 设置地图容器id
-      viewMode: "3D", // 是否为3D地图模式
+      // 设置地图容器 id
+      viewMode: "3D", // 是否为 3D 地图模式
       zoom: 17, // 初始化地图级别
       center: [103.988272, 30.581158], // 初始化地图中心点位置
       terrain: true, //开启地形图
-      rotation: 10, //地图顺时针旋转角度,修正校区位置
+      rotation: 10, //地图顺时针旋转角度，修正校区位置
     });
   } catch (e) {
     console.log(e);
