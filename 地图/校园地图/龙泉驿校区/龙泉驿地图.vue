@@ -13,12 +13,12 @@ const loadMap = async () => {
       plugins: ["AMap.Scale"],
     });
     map.value = new AMap.Map("container", {
-      // 设置地图容器id
-      viewMode: "3D", // 是否为3D地图模式
+      // 设置地图容器 id
+      viewMode: "3D", // 是否为 3D 地图模式
       zoom: 17.5, // 初始化地图级别
       center: [104.305406, 30.606364], // 初始化地图中心点位置
       terrain: true, //开启地形图
-      rotation: -25, //地图顺时针旋转角度,修正校区位置
+      rotation: -25, //地图顺时针旋转角度，修正校区位置
     });
   } catch (e) {
     console.log(e);

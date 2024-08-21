@@ -135,3 +135,6 @@ dist
 
 # Mac
 .DS_Store
+
+# Local history
+.history
