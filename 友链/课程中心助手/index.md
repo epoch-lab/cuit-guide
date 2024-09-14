@@ -1,10 +1,8 @@
-# CUIT 课程中心助手
+# [CUIT 课程中心助手](https://github.com/yanyaoli/cuit-course-helper)
 ## 说明
 成都信息工程大学课程中心助手，一键完成网课/课件。
 
 本脚本不鼓励任何形式的学习作弊，不主张懒惰学习行为，仅支持辅助完成额外网络课程，提高学习效率，专业要求课程请务必认真学习。
-
-项目地址：https://github.com/yanyaoli/cuit-course-helper
 
 
 ## 使用指南

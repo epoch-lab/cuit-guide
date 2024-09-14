@@ -1,7 +1,6 @@
-# SecondClass
-CUIT 第二课堂安卓客户端
+# [SecondClass](https://github.com/thriic/SecondClass)
 
-项目地址：https://github.com/thriic/SecondClass
+CUIT 第二课堂安卓客户端
 
 ***请尽可能在合理时间内进行报名签到***   
 ***(如只签到进行中的活动)***  
