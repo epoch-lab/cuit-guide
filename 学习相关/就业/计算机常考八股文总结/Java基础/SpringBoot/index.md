@@ -62,7 +62,7 @@ AOP 主要包含如下几个概念：
 1. JDK 动态代理：基于接口的代理，通过`java.lang.reflect.Proxy`类实现，要求目标对象必须实现接口。
 2. CGLIB 动态代理：基于类的代理，通过`net.sf.cglib.proxy.Enhancer`类实现，不要求目标对象必须实现接口。
 
-在SpringBoot中实现AOP，一般需要经过以下几个步骤：
+在 SpringBoot 中实现 AOP，一般需要经过以下几个步骤：
 
 1. 定义切面和通知
     ```java
@@ -80,7 +80,7 @@ AOP 主要包含如下几个概念：
         }
     }
     ```
-2. 配置Spring AOP（由SpringBoot自动完成）
+2. 配置 Spring AOP（由 SpringBoot 自动完成）
 3. 使用目标对象
     ```java
     import org.springframework.beans.factory.annotation.Autowired;
@@ -94,7 +94,7 @@ AOP 主要包含如下几个概念：
         }
     }
     ```
-4. 启动SpringBoot应用
+4. 启动 SpringBoot 应用
 
 此时，当调用`UserService`的`addUser`方法时，会自动执行`LoggingAspect`的`logBeforeMethod`方法。
 
@@ -106,7 +106,7 @@ IOC（Inversion of Control）是一种控制反转的思想，主要是将对象
 
 DI（Dependency Injection）是一种依赖注入的方式，主要是将对象的依赖关系交给容器。
 
-实际上很多人认为IOC和DI是一码事，因为IOC是DI的一种实现方式，但是从概念上来说，IOC是一种思想，DI是一种方式，目的都是为了解耦对象的创建和使用，提高代码的可读性、可维护性、可扩展性。
+实际上很多人认为 IOC 和 DI 是一码事，因为 IOC 是 DI 的一种实现方式，但是从概念上来说，IOC 是一种思想，DI 是一种方式，目的都是为了解耦对象的创建和使用，提高代码的可读性、可维护性、可扩展性。
 
 SpringBoot 的 IOC 和 DI 主要有以下几个概念：
 
