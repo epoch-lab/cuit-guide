@@ -62,13 +62,51 @@ AOP 主要包含如下几个概念：
 1. JDK 动态代理：基于接口的代理，通过`java.lang.reflect.Proxy`类实现，要求目标对象必须实现接口。
 2. CGLIB 动态代理：基于类的代理，通过`net.sf.cglib.proxy.Enhancer`类实现，不要求目标对象必须实现接口。
 
-其原理很简单，调用`Method.invoke()`方法时，会先调用`MethodInterceptor.intercept()`方法，最后将参数传递给目标对象。
+在 SpringBoot 中实现 AOP，一般需要经过以下几个步骤：
+
+1. 定义切面和通知
+    ```java
+    import org.aspectj.lang.annotation.Aspect;
+    import org.aspectj.lang.annotation.Before;
+    import org.springframework.stereotype.Component;
+
+    @Aspect
+    @Component
+    public class LoggingAspect {
+
+        @Before("execution(* com.example.service.*.*(..))")
+        public void logBeforeMethod() {
+            System.out.println("Method execution started");
+        }
+    }
+    ```
+2. 配置 Spring AOP（由 SpringBoot 自动完成）
+3. 使用目标对象
+    ```java
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.stereotype.Service;
+
+    @Service
+    public class UserService {
+
+        public void addUser() {
+            System.out.println("User added");
+        }
+    }
+    ```
+4. 启动 SpringBoot 应用
+
+此时，当调用`UserService`的`addUser`方法时，会自动执行`LoggingAspect`的`logBeforeMethod`方法。
+
+通过这种方式，我们可以很轻易地为目标对象添加横切关注点，提高代码的可读性、可维护性、可扩展性。
 
 ## 什么是 IOC 和 DI？
 
-IOC（Inversion of Control）是一种控制反转的思想，主要是将对象的创建和管理交给容器，提高代码的可读性、可维护性、可扩展性。
+IOC（Inversion of Control）是一种控制反转的思想，主要是将对象的创建和管理交给容器。
 
-DI（Dependency Injection）是一种依赖注入的方式，主要是将对象的依赖关系交给容器，提高代码的可读性、可维护性、可扩展性。
+DI（Dependency Injection）是一种依赖注入的方式，主要是将对象的依赖关系交给容器。
+
+实际上很多人认为 IOC 和 DI 是一码事，因为 IOC 是 DI 的一种实现方式，但是从概念上来说，IOC 是一种思想，DI 是一种方式，目的都是为了解耦对象的创建和使用，提高代码的可读性、可维护性、可扩展性。
 
 SpringBoot 的 IOC 和 DI 主要有以下几个概念：
 
