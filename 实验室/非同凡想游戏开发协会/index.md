@@ -35,7 +35,7 @@
 
 ## 我们如何招新
 
-我们的招新群:
+我们的招新群：
 ***[750598748](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=VzbQu3XrzJlIvjOFvYe-g7eoqLvc1RoC&authKey=HTNtFxWoZNd5JYq7K4ciRv%2FoJnSWQOiO8AGS%2BlqrUckazxHESFhMpxRPZNftXmn2&noverify=0&group_code=750598748)***
 
 ![二维码](image.png)
