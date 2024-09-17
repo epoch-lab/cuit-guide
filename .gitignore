@@ -138,3 +138,6 @@ dist
 
 # Local history
 .history
+
+# IntelliJ
+.idea/

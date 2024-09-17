@@ -1,6 +1,6 @@
 # [SecondClass](https://github.com/thriic/SecondClass)
 
-CUIT 第二课堂安卓客户端(deprecated, 已经弃用)
+CUIT 第二课堂安卓客户端 (deprecated, 已经弃用)
 
 ***请尽可能在合理时间内进行报名签到***   
 ***(如只签到进行中的活动)***  
