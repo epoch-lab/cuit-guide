@@ -28,10 +28,14 @@ Nodejs 是一种 JavaScript 框架，主要用于开发 Web 应用，支持异�
 
 SpringBoot 的自动装配原理主要有以下几个步骤：
 
-1. SpringBoot 启动时，会扫描所有的类路径，查找`@SpringBootApplication`注解。
-2. SpringBoot 会根据`@SpringBootApplication`注解的配置，自动装配`@Configuration`、`@ComponentScan`、`@EnableAutoConfiguration`等注解。
-3. SpringBoot 会根据`@EnableAutoConfiguration`注解的配置，自动装配`spring-boot-autoconfigure`模块中的配置类。
-4. SpringBoot 会根据`spring.factories`文件中的配置，自动装配`spring-boot-starter`模块中的依赖。
+1. SpringBoot 启动时，会扫描类路径，查找带有 `@SpringBootApplication` 注解的主类。
+2. `@SpringBootApplication` 注解是一个组合注解，包含了 `@SpringBootConfiguration`、`@EnableAutoConfiguration` 和 `@ComponentScan`。
+   - `@SpringBootConfiguration`：标识这是一个 SpringBoot 配置类。
+   - `@EnableAutoConfiguration`：启用 SpringBoot 的自动装配机制。
+   - `@ComponentScan`：启用组件扫描，自动发现并注册 Spring 组件。
+3. `@EnableAutoConfiguration` 注解会触发 `SpringFactoriesLoader` 加载 `META-INF/spring.factories` 文件中配置的自动装配类。
+4. 自动装配类通常使用 `@Conditional` 注解，根据特定条件（如类路径中是否存在某个类、某个配置属性是否存在等）决定是否装配某个 Bean。
+5. `spring-boot-autoconfigure` 模块中包含了大量的自动配置类，这些类根据应用的环境和配置自动装配所需的 Bean。
 
 SpringBoot 的自动装配原理是为了简化开发流程，提高开发效率，减少配置文件，提高代码的可读性、可维护性、可扩展性。
 
@@ -136,14 +140,14 @@ Starter 是 SpringBoot 的一个插件，本质是对依赖的集合，主要是
 
 Starter 主要包含如下几个概念：
 
-1. Starter：SpringBoot 的插件，用于管理依赖关系，提供一组依赖的集合，方便开发和部署。
-2. Autoconfigure：SpringBoot 的自动配置，用于自动装配依赖关系，提供一组配置的集合，方便开发和部署。
-3. Starter Parent：SpringBoot 的父项目，用于管理依赖关系，提供一组依赖的集合，方便开发和部署。
-4. Starter Test：SpringBoot 的测试插件，用于测试依赖关系，提供一组测试的集合，方便开发和部署。
+1. **Starter**：SpringBoot 的插件，用于管理依赖关系，提供一组依赖的集合，方便开发和部署。例如，`spring-boot-starter-web` 包含了构建 Web 应用所需的常用依赖。
+2. **Autoconfigure**：SpringBoot 的自动配置机制，用于根据类路径中的依赖和自定义配置自动装配 Spring Bean，简化配置过程。
+3. **Starter Parent**：SpringBoot 的父项目，提供了一组默认的依赖管理和插件配置，简化了项目的构建配置。例如，`spring-boot-starter-parent` 提供了常用的依赖版本管理和插件配置。
+4. **Starter Test**：SpringBoot 的测试插件，包含了常用的测试依赖和配置，方便进行单元测试和集成测试。例如，`spring-boot-starter-test` 包含了 JUnit、Mockito 等常用测试框架。
 
 Starter 是为了简化依赖管理，提高代码的可读性、可维护性、可扩展性，根据不同的需求选择合适的 Starter。
 
-值得注意的是，如果是官方的 Starter，一般是以`spring-boot-starter-`开头，如`spring-boot-starter-web`、`spring-boot-starter-data-jpa`等，如果是三方的 Starter，一般是以`xxx-spring-boot-starter`开头，如`mybatis-spring-boot-starter`、`dubbo-spring-boot-starter`等。
+值得注意的是，如果是官方的 Starter，一般是以`spring-boot-starter-`开头，如`spring-boot-starter-web`、`spring-boot-starter-data-jpa`等，如果是三方的 Starter，一般格式是`xxx-spring-boot-starter`，如`mybatis-spring-boot-starter`、`dubbo-spring-boot-starter`等。
 
 ## SpringBoot 在注入时如何解决循环依赖？（不常考，但如果说自己读过源码，必问）
 
