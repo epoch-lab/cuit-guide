@@ -21,8 +21,8 @@ go下载地址：https://go.dev/dl/
 1. 打开搜索框，搜索“编辑系统环境变量”，点击
 ![alt text](image-3.png)
 2. 按照图中步骤，新建环境变量。GOROOT中填写Go的安装位置。**提前创建好Go的工作区文件夹，GOPATH中填写这个文件夹的位置**。有的同学可能GOROOT在安装go的时候已经自动帮你配置了，再检查一遍就好
-![alt text](联想截图_20240930141656.png)
-![alt text](image-4.png)
+![alt text](image111.png)
+![alt text](image222.png)
 3. 在Go的工作区文件夹创建三个文件夹，分别为bin、pkg和src，我们之后所有的代码都会在src中编写
 ![alt text](image-12.png)
 4. 恭喜你，环境搭建完成，接下啦就可以开始Go的代码学习了！
