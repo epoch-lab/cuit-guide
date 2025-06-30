@@ -1,8 +1,8 @@
 {
   "name": "ACM 算法实验室",
   "shortName": "ACM",
-  "technologyStack": ["Java", "Python", "C", "C#"],
-  "college": "计算机学院",
+  "technologyStack": ["C++"，"Java", "Python", "C", "C#"],
+  "college": "软件工程学院",
   "location": "双中心 B 座 504 与 511",
   "QQ": "758762821",
   "description": "ACM 实验室，依托程序设计竞赛，旨在培养大学生创新能力、团队精神和在压力下编写程序、分析和解决问题的能力",
