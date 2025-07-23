@@ -1,3 +1,8 @@
+---
+title: 关于本项目
+order: 1
+---
+
 # 这是做什么的？
 
 成都信息工程大学 (Chengdu University of Information Technology, 简称 CUIT, 或者~~信砖~~,~~驾校~~) 指南是一个公益性质的项目的文档项目;
