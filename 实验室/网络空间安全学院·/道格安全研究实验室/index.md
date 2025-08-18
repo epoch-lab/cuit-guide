@@ -113,9 +113,11 @@ D0g3 是一支非常年轻的队伍，对技术的热爱和坚持让各个年级
 
 * GRYS - 博客园 https://www.cnblogs.com/gaorenyusi
 
-* pRism的博客：www.pri87.vip/
+* pRism的博客：http://www.pri87.vip/
 
-* E4telle - 博客园 www.cnblogs.com/E4telle
+* tammy66 - 博客园 https://www.cnblogs.com/tammy66
+  
+* cyr1s的博客：https://cyr1s-dev.github.io/
 
 最后，再次附上我们实验室的招新群，期待大家的到来呀嘿嘿ξ( ✿＞◡❛) 群号是 **901392792**
 
