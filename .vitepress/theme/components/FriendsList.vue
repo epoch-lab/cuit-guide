@@ -4,21 +4,22 @@
         style="display: flex;justify-content: center;font-size: 1rem; color: #666; margin-top: 40px; font-weight: 600; margin-left: 20px; margin-right: 20px;">
         如需加入，请自行提交pr/联系Epoch开发实验室~
         <span style="
-            font-size: 1rem;
-            color: #2563eb;
-            cursor: pointer;
-          " @click="
-            copyToClipboard({
-                name: '',
-                graduationYear: '',
-                major: '',
-                technicalDirection: [],
-                link: '',
-                avatar: '',
-                description: '',
-            })
-            ">
-            (点击获取格式)
+        font-size: 1rem;
+        color: #2563eb;
+        cursor: pointer;
+      " @click='
+        copyToClipboard(
+            {
+                "name": "例子",
+                "graduationYear": 2020,
+                "major": "待填(专业名称如软件工程, 计算机科学与技术)",
+                "technicalDirection": ["方向1", "方向2"],
+                "link": "youngestar.top/ (你的友链或者 github 主页等等)",
+                "avatar": "https://...(图片链接)(建议挂图床上, 推荐图床如 https://postimages.org/)",
+                "description": "待填(你的描述, 建议简短一点点)"
+            }
+        )'>
+            (点击获取样例)
         </span>
     </span>
     <LoadingComponent v-model="isLoading" @retry="loadFriends" @cancel="isLoading = false"></LoadingComponent>
@@ -163,7 +164,14 @@ const loadFriends = async () => {
         const friendData: Friend[] = [];
         for (const path in friendModules) {
             const module = await friendModules[path]();
-            friendData.push(module.default);
+            // 去除例子(AAAExample)
+            if (module.default.name === "例子") {
+                continue;
+            }
+            // 添加入数组
+            if (module.default) {
+                friendData.push(module.default);
+            }
         }
         // 这里进行排序处理 (排序法: 先按姓名字母排序, 再按毕业年份倒序)
         friends.value = friendData.sort((a, b) => a.name.localeCompare(b.name)).sort((a, b) => b.graduationYear - a.graduationYear);

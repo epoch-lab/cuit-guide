@@ -1,0 +1,9 @@
+{
+  "name": "例子",
+  "graduationYear": 2020,
+  "major": "待填(专业名称如软件工程, 计算机科学与技术)",
+  "technicalDirection": ["方向1", "方向2"],
+  "link": "youngestar.top/ (你的友链或者 github 主页等等)",
+  "avatar": "https://...(图片链接)(建议挂图床上, 推荐图床如 https://postimages.org/)",
+  "description": "待填(你的描述, 建议简短一点点)"
+}
