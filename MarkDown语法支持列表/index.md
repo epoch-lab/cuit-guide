@@ -66,7 +66,7 @@ ___
 这是一个[引用样式链接][example_link]。
 
 这是一个内联图片：
-![Markdown Logo](https://www.markdown.cn/images/logo.png "Markdown Logo")
+![Markdown Logo](https://www.markdown.cn/img/hero.png "Markdown Logo")
 
 这是一个引用样式图片：
 ![GitHub Logo][github_logo]
