@@ -8,7 +8,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vitepress'
 import WelcomeModal from './WelcomeModal.vue'
-import PartyImage from './images/party.webp'
+import PartyImage from './images/party.svg'
 
 interface ModalConfig {
   imageUrl?: string
