@@ -1,57 +1,40 @@
 <template>
     <h2 id="main-title">CUIT 校友友链</h2>
-    <span
-        style="display: flex;justify-content: center;font-size: 1rem; color: #666; margin-top: 40px; font-weight: 600; margin-left: 20px; margin-right: 20px;">
-        如需加入，请自行提交pr/联系Epoch开发实验室~
-        <span style="
-        font-size: 1rem;
-        color: #2563eb;
-        cursor: pointer;
-      " @click='
-        copyToClipboard(
-            {
-                "name": "例子",
-                "enrollmentYear": 2020,
-                "major": "待填(专业名称如软件工程, 计算机科学与技术)",
-                "technicalDirection": ["方向1", "方向2"],
-                "link": "youngestar.top/ (你的友链或者 github 主页等等)",
-                "avatar": "https://...(图片链接)(建议挂图床上, 推荐图床如 https://postimages.org/)",
-                "description": "待填(你的描述, 建议简短一点点)"
-            }
-        )'>
-            (点击获取样例)
-        </span>
-    </span>
-    <LoadingComponent v-model="isLoading" @retry="loadFriends" @cancel="isLoading = false"></LoadingComponent>
-    <div id="friends-list" v-if="!isLoading">
+    <div id="friends-list">
         <!-- 选择器部分 -->
         <div id="selector-container">
-            <SelectedUi v-show="isSelectorShow" v-model="selectedYear" :options="graduationYears"
-                placeholder="选择毕业年份" />
-            <SelectedUi v-show="isSelectorShow" v-model="selectedMajor" :options="majors" placeholder="选择专业" />
-            <SelectedUi v-show="isSelectorShow" v-model="selectedTechnicalDirection" :options="technicalDirections"
-                placeholder="选择技术方向" />
-            <div id="selector-btn" @click="toggleSelector" :class="{ 'active': isSelectorShow }" aria-label="筛选控制按钮">
-                <svg class="selector-icon" viewBox="0 0 1024 1024">
-                    <path :d="isSelectorShow ? closePath : filterPath" fill="currentColor" />
-                </svg>
+            <div class="selector-row">
+                <SelectedUi v-show="isSelectorShow" v-model="selectedYear" :options="enrollmentYears"
+                    placeholder="选择毕业年份" />
+                <SelectedUi v-show="isSelectorShow" v-model="selectedMajor" :options="majors" placeholder="选择专业" />
+                <SelectedUi v-show="isSelectorShow" v-model="selectedTechnicalDirection" :options="technicalDirections"
+                    placeholder="选择技术方向" />
+                <div id="selector-btn" @click="toggleSelector" :class="{ 'active': isSelectorShow }" aria-label="筛选控制按钮">
+                    <svg class="selector-icon" viewBox="0 0 1024 1024">
+                        <path :d="isSelectorShow ? closePath : filterPath" fill="currentColor" />
+                    </svg>
+                </div>
             </div>
         </div>
 
-        <!-- 筛选逻辑部分 -->
-        <template v-for="time in enrollmentYears" :key="time.value">
-            <TimeLine :colors="['#ff6b6b', '#4ecdc4']" size="large" class="time-line"
-                v-if="filteredFriends.filter(friend => friend.enrollmentYear === time.value).length > 0">
-                {{ time.value }}
-            </TimeLine>
-            <div id="blog-container"
-                v-if="filteredFriends.filter(friend => friend.enrollmentYear === time.value).length > 0">
-                <FriendCard v-for="friend in filteredFriends.filter(friend => friend.enrollmentYear === time.value)"
-                    :friend="friend" :key="friend.name" />
-            </div>
-        </template>
+        <!-- 骨架屏加载状态 -->
+        <div id="blog-container" v-if="isLoading">
+            <SkeletonCard v-for="n in 6" :key="n" />
+        </div>
 
-        <EmptyState v-if="filteredFriends.length === 0" title="没有找到符合条件的校友" description="请尝试调整筛选条件">
+        <!-- 友链卡片容器 -->
+        <div id="blog-container" v-else>
+            <FriendCard 
+                v-for="friend in filteredFriends" 
+                :friend="friend" 
+                :key="friend.name"
+                :is-template="friend.name === '你的姓名'"
+                @template-click="copyTemplateToClipboard"
+            />
+        </div>
+
+        <!-- 空状态 -->
+        <EmptyState v-if="!isLoading && filteredFriends.length === 0" title="没有找到符合条件的校友" description="请尝试调整筛选条件">
         </EmptyState>
     </div>
 
@@ -69,11 +52,10 @@
 </template>
 
 <script setup lang="ts">
-import LoadingComponent from "./ui/LoadingComponent.vue";
 import EmptyState from "./ui/EmptyState.vue";
 import SelectedUi from "./ui/SelectedUi.vue";
-import TimeLine from "./ui/TimeLine.vue";
 import FriendCard from "./Card/FriendCard.vue";
+import SkeletonCard from "./ui/SkeletonCard.vue";
 import { ref, onMounted, type Ref, watch } from "vue"
 
 interface Friend {
@@ -144,12 +126,22 @@ function showToastMessage(message, duration = 2000) {
     }, duration);
 }
 
-// 复制到剪贴板功能
-function copyToClipboard(text) {
+// 复制模板到剪贴板
+function copyTemplateToClipboard(templateData) {
+    const template = {
+        "name": "你的姓名",
+        "enrollmentYear": 2024,
+        "major": "你的专业",
+        "technicalDirection": ["技术方向1", "技术方向2"],
+        "link": "https://your-website.com",
+        "avatar": "https://your-avatar-url.com/avatar.jpg",
+        "description": "你的个人描述"
+    };
+    
     navigator.clipboard
-        .writeText(JSON.stringify(text))
+        .writeText(JSON.stringify(template, null, 2))
         .then(() => {
-            showToastMessage("已复制到剪贴板");
+            showToastMessage("模板已复制到剪贴板，请修改为你的信息！");
         })
         .catch((err) => {
             console.error("复制失败", err);
@@ -162,19 +154,36 @@ const loadFriends = async () => {
     try {
         const friendModules = import.meta.glob('@data/friends/*.json');
         const friendData: Friend[] = [];
+        let templateData: Friend | null = null;
+        
         for (const path in friendModules) {
-            const module = await friendModules[path]();
+            const module = await friendModules[path]() as { default: Friend };
+            
+            // 检查是否为模板文件
+            if (path.includes('template.json')) {
+                templateData = module.default;
+                continue;
+            }
+            
             // 去除例子(AAAExample)
             if (module.default.name === "例子") {
                 continue;
             }
+            
             // 添加入数组
             if (module.default) {
                 friendData.push(module.default);
             }
         }
-        // 这里进行排序处理 (排序法: 先按姓名字母排序, 再按入学年份倒序)
-        friends.value = friendData.sort((a, b) => a.name.localeCompare(b.name)).sort((a, b) => b.enrollmentYear - a.enrollmentYear);
+        
+        // 这里进行排序处理 (排序法: 随机排列)
+        friends.value = friendData.sort(() => Math.random() - 0.5);
+        
+        // 将模板卡片添加到最前面
+        if (templateData) {
+            friends.value.unshift(templateData);
+        }
+        
         // 方向数组字母排序
         for (let friend of friends.value) {
             friend.technicalDirection.sort((a, b) => a.localeCompare(b))
@@ -264,17 +273,56 @@ onMounted(async () => {
     color: var(--vp-c-text-1);
 }
 
-.time-line {
-    margin: 50px 0;
+@media (max-width: 768px) {
+    #main-title {
+        font-size: 28px;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    #main-title {
+        font-size: 24px;
+        margin-top: 30px;
+        gap: 8px;
+    }
 }
 
 #selector-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
     align-items: center;
     gap: 20px;
     margin: 40px 0;
+
+    .selector-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+        gap: 16px;
+        margin: 30px 0;
+        
+        .selector-row {
+            gap: 12px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        gap: 12px;
+        margin: 20px 0;
+        
+        .selector-row {
+            gap: 8px;
+            flex-direction: column;
+            width: 100%;
+        }
+    }
 
     #selector-btn {
         --btn-size: 42px;
@@ -355,12 +403,38 @@ onMounted(async () => {
 
 #blog-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
     width: 95%;
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 20px;
+    grid-auto-rows: max-content;
+}
+
+@media (max-width: 1080px) {
+    #blog-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 14px;
+        width: 96%;
+    }
+}
+
+@media (max-width: 768px) {
+    #blog-container {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 12px;
+        width: 98%;
+    }
+}
+
+@media (max-width: 480px) {
+    #blog-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        width: 100%;
+        padding: 0 10px;
+    }
 }
 
 
@@ -410,11 +484,5 @@ onMounted(async () => {
 .toast-leave-to {
     opacity: 0;
     transform: translate(-50%, 20px);
-}
-
-@media (max-width:1080px) {
-    #blog-container {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
 }
 </style>
