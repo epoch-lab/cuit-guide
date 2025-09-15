@@ -26,8 +26,8 @@
     <div id="friends-list" v-if="!isLoading">
         <!-- 选择器部分 -->
         <div id="selector-container">
-            <SelectedUi v-show="isSelectorShow" v-model="selectedYear" :options="enrollmentYears"
-                placeholder="选择入学年份" />
+            <SelectedUi v-show="isSelectorShow" v-model="selectedYear" :options="graduationYears"
+                placeholder="选择毕业年份" />
             <SelectedUi v-show="isSelectorShow" v-model="selectedMajor" :options="majors" placeholder="选择专业" />
             <SelectedUi v-show="isSelectorShow" v-model="selectedTechnicalDirection" :options="technicalDirections"
                 placeholder="选择技术方向" />
