@@ -11,7 +11,7 @@
         copyToClipboard(
             {
                 "name": "例子",
-                "graduationYear": 2020,
+                "enrollmentYear": 2020,
                 "major": "待填(专业名称如软件工程, 计算机科学与技术)",
                 "technicalDirection": ["方向1", "方向2"],
                 "link": "youngestar.top/ (你的友链或者 github 主页等等)",
@@ -26,7 +26,7 @@
     <div id="friends-list" v-if="!isLoading">
         <!-- 选择器部分 -->
         <div id="selector-container">
-            <SelectedUi v-show="isSelectorShow" v-model="selectedYear" :options="graduationYears"
+            <SelectedUi v-show="isSelectorShow" v-model="selectedYear" :options="enrollmentYears"
                 placeholder="选择毕业年份" />
             <SelectedUi v-show="isSelectorShow" v-model="selectedMajor" :options="majors" placeholder="选择专业" />
             <SelectedUi v-show="isSelectorShow" v-model="selectedTechnicalDirection" :options="technicalDirections"
@@ -39,14 +39,14 @@
         </div>
 
         <!-- 筛选逻辑部分 -->
-        <template v-for="time in graduationYears" :key="time.value">
+        <template v-for="time in enrollmentYears" :key="time.value">
             <TimeLine :colors="['#ff6b6b', '#4ecdc4']" size="large" class="time-line"
-                v-if="filteredFriends.filter(friend => friend.graduationYear === time.value).length > 0">
+                v-if="filteredFriends.filter(friend => friend.enrollmentYear === time.value).length > 0">
                 {{ time.value }}
             </TimeLine>
             <div id="blog-container"
-                v-if="filteredFriends.filter(friend => friend.graduationYear === time.value).length > 0">
-                <FriendCard v-for="friend in filteredFriends.filter(friend => friend.graduationYear === time.value)"
+                v-if="filteredFriends.filter(friend => friend.enrollmentYear === time.value).length > 0">
+                <FriendCard v-for="friend in filteredFriends.filter(friend => friend.enrollmentYear === time.value)"
                     :friend="friend" :key="friend.name" />
             </div>
         </template>
@@ -78,7 +78,7 @@ import { ref, onMounted, type Ref, watch } from "vue"
 
 interface Friend {
     name: string,
-    graduationYear: number,
+    enrollmentYear: number,
     major: string,
     technicalDirection: string[],
     link: string,
@@ -117,7 +117,7 @@ const selectedMajor = ref('')
 const selectedTechnicalDirection = ref('')
 
 // 选项数组
-const graduationYears = ref<yearOption[]>([])
+const enrollmentYears = ref<yearOption[]>([])
 const majors = ref<majorOption[]>([])
 const technicalDirections = ref<technicalDirectionOption[]>([])
 
@@ -174,7 +174,7 @@ const loadFriends = async () => {
             }
         }
         // 这里进行排序处理 (排序法: 先按姓名字母排序, 再按毕业年份倒序)
-        friends.value = friendData.sort((a, b) => a.name.localeCompare(b.name)).sort((a, b) => b.graduationYear - a.graduationYear);
+        friends.value = friendData.sort((a, b) => a.name.localeCompare(b.name)).sort((a, b) => b.enrollmentYear - a.enrollmentYear);
         // 方向数组字母排序
         for (let friend of friends.value) {
             friend.technicalDirection.sort((a, b) => a.localeCompare(b))
@@ -190,9 +190,9 @@ const loadFriends = async () => {
 // 选择器内数据获取
 const getSelectorsData = () => {
     let count = 0;
-    const findNewGraduationYears = (friend: Friend) => {
-        if (friend.graduationYear && !graduationYears.value.find((item) => { return item.value === friend.graduationYear })) {
-            graduationYears.value.push({ value: friend.graduationYear, label: `毕业于 ${friend.graduationYear} 年` });
+    const findNewenrollmentYears = (friend: Friend) => {
+        if (friend.enrollmentYear && !enrollmentYears.value.find((item) => { return item.value === friend.enrollmentYear })) {
+            enrollmentYears.value.push({ value: friend.enrollmentYear, label: `毕业于 ${friend.enrollmentYear} 年` });
         }
     }
     const findNewMajors = (friend: Friend) => {
@@ -209,12 +209,12 @@ const getSelectorsData = () => {
         }
     }
     for (count; count < friends.value.length; count++) {
-        findNewGraduationYears(friends.value[count]);
+        findNewenrollmentYears(friends.value[count]);
         findNewMajors(friends.value[count]);
         findNewTechnicalDirections(friends.value[count]);
     }
     // 按年份逆序排序
-    graduationYears.value.sort((a, b) => b.value - a.value);
+    enrollmentYears.value.sort((a, b) => b.value - a.value);
     // 按字母顺序排序
     majors.value.sort((a, b) => a.label.localeCompare(b.label));
     technicalDirections.value.sort((a, b) => a.label.localeCompare(b.label));
@@ -224,7 +224,7 @@ const getSelectorsData = () => {
 watch([selectedYear, selectedMajor, selectedTechnicalDirection], () => {
     // 过滤数据函数
     const filterFriends = (friend: Friend) => {
-        if (selectedYear.value && friend.graduationYear !== parseInt(selectedYear.value)) {
+        if (selectedYear.value && friend.enrollmentYear !== parseInt(selectedYear.value)) {
             return false;
         }
         if (selectedMajor.value && friend.major !== selectedMajor.value) {

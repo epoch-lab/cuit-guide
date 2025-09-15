@@ -34,12 +34,12 @@ const props = defineProps({
     friend: {
         type: Object,
         required: true,
-        validator: (val: any) => ['name', 'link', 'avatar', 'description', "graduationYear", "major", "technicalDirection"].every(key => key in val)
+        validator: (val: any) => ['name', 'link', 'avatar', 'description', "enrollmentYear", "major", "technicalDirection"].every(key => key in val)
     },
 })
 
 const formattedTags = computed(() => [
-    `毕业于 ${props.friend.graduationYear} 年`,
+    `${props.friend.enrollmentYear} 级`,
     `${props.friend.major} 专业`,
     `${props.friend.technicalDirection} 方向`
 ])
@@ -122,11 +122,11 @@ const navigateToUrl = () => {
 }
 
 .friend-avatar {
-    width: 150px;
+    width: 160px;
     height: 160px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 20px;
+    margin-right: 10px;
     transition: transform 0.3s ease;
     box-shadow: var(--vp-shadow-1);
     padding: 4px;
@@ -201,7 +201,7 @@ const navigateToUrl = () => {
 @media ((max-width: 540px)) or ((min-width: 775px) and (max-width: 1024px)) {
     .friend-card {
         max-width: 500px;
-        width: 100%;
+        width: 90%;
         height: auto;
     }
 
