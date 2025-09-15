@@ -27,7 +27,7 @@
         <!-- 选择器部分 -->
         <div id="selector-container">
             <SelectedUi v-show="isSelectorShow" v-model="selectedYear" :options="enrollmentYears"
-                placeholder="选择毕业年份" />
+                placeholder="选择入学年份" />
             <SelectedUi v-show="isSelectorShow" v-model="selectedMajor" :options="majors" placeholder="选择专业" />
             <SelectedUi v-show="isSelectorShow" v-model="selectedTechnicalDirection" :options="technicalDirections"
                 placeholder="选择技术方向" />
@@ -173,7 +173,7 @@ const loadFriends = async () => {
                 friendData.push(module.default);
             }
         }
-        // 这里进行排序处理 (排序法: 先按姓名字母排序, 再按毕业年份倒序)
+        // 这里进行排序处理 (排序法: 先按姓名字母排序, 再按入学年份倒序)
         friends.value = friendData.sort((a, b) => a.name.localeCompare(b.name)).sort((a, b) => b.enrollmentYear - a.enrollmentYear);
         // 方向数组字母排序
         for (let friend of friends.value) {
@@ -192,7 +192,7 @@ const getSelectorsData = () => {
     let count = 0;
     const findNewenrollmentYears = (friend: Friend) => {
         if (friend.enrollmentYear && !enrollmentYears.value.find((item) => { return item.value === friend.enrollmentYear })) {
-            enrollmentYears.value.push({ value: friend.enrollmentYear, label: `毕业于 ${friend.enrollmentYear} 年` });
+            enrollmentYears.value.push({ value: friend.enrollmentYear, label: `${friend.enrollmentYear} 级` });
         }
     }
     const findNewMajors = (friend: Friend) => {
