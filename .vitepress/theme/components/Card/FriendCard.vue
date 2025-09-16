@@ -31,11 +31,7 @@
                             class="meta-tag more-tag"
                             :aria-label="directionsExpanded ? '收起技术方向' : '展开更多技术方向'"
                         >
-<<<<<<< HEAD
                             {{ directionsExpanded ? '收起' : `+${hiddenDirectionsCount}` }}
-=======
-                            {{ directionsExpanded ? '收起' : `+${props.friend.technicalDirection.length - maxVisibleDirections}` }}
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
                         </button>
                     </div>
                 </div>
@@ -63,11 +59,7 @@
 </template>
 
 <script setup lang="ts">
-<<<<<<< HEAD
 import { computed, ref, nextTick } from 'vue'
-=======
-import { computed, ref } from 'vue'
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
 import LazyImage from '../ui/LazyImage.vue'
 
 const props = defineProps({
@@ -82,21 +74,13 @@ const props = defineProps({
     }
 })
 
-<<<<<<< HEAD
 const emit = defineEmits(['template-click', 'layout-change'])
-=======
-const emit = defineEmits(['template-click'])
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
 
 // 展开状态管理
 const isExpanded = ref(false)
 const directionsExpanded = ref(false)
 
-<<<<<<< HEAD
 // 最大可见方向数量（固定值，简化布局）
-=======
-// 最大可见方向数量（第一行能显示的数量）
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
 const maxVisibleDirections = 2
 
 // 判断是否需要显示展开按钮（描述长度超过60个字符）
@@ -106,11 +90,7 @@ const shouldShowExpandButton = computed(() => {
 
 // 技术方向显示逻辑
 const displayedDirections = computed(() => {
-<<<<<<< HEAD
     if (directionsExpanded.value) {
-=======
-    if (directionsExpanded.value || props.friend.technicalDirection.length <= maxVisibleDirections) {
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
         return props.friend.technicalDirection
     }
     return props.friend.technicalDirection.slice(0, maxVisibleDirections)
@@ -120,7 +100,6 @@ const hasMoreDirections = computed(() => {
     return props.friend.technicalDirection.length > maxVisibleDirections
 })
 
-<<<<<<< HEAD
 // 计算隐藏的方向数量
 const hiddenDirectionsCount = computed(() => {
     return props.friend.technicalDirection.length - maxVisibleDirections
@@ -140,19 +119,11 @@ const triggerLayoutUpdate = () => {
 const toggleExpanded = () => {
     isExpanded.value = !isExpanded.value
     triggerLayoutUpdate()
-=======
-// 切换展开状态
-const toggleExpanded = () => {
-    isExpanded.value = !isExpanded.value
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
 }
 
 const toggleDirections = () => {
     directionsExpanded.value = !directionsExpanded.value
-<<<<<<< HEAD
     triggerLayoutUpdate()
-=======
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
 }
 
 const navigateToUrl = () => {
@@ -205,10 +176,7 @@ const navigateToUrl = () => {
     border-color: var(--vp-c-divider);
     background: var(--vp-c-bg-soft);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-<<<<<<< HEAD
     transform: translateY(-2px);
-=======
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
 }
 
 .friend-card:hover::before {
@@ -217,11 +185,7 @@ const navigateToUrl = () => {
 
 /* 模板卡片特殊样式 */
 .template-card {
-<<<<<<< HEAD
     border: 1px dashed var(--vp-c-brand);
-=======
-    border: 2px dashed var(--vp-c-brand);
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
     background: var(--vp-c-bg);
 }
 
@@ -243,20 +207,11 @@ const navigateToUrl = () => {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-<<<<<<< HEAD
     margin-bottom: 6px;
 }
 
 .card-footer {
     margin-top: 6px;
-=======
-    margin-bottom: 8px;
-}
-
-.card-footer {
-    margin-top: 0;
-    padding-top: 8px;
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
     border-top: 1px solid var(--vp-c-divider-light);
 }
 
@@ -323,11 +278,8 @@ const navigateToUrl = () => {
     flex-direction: column;
     gap: 8px;
     min-width: 0;
-<<<<<<< HEAD
     max-width: calc(100% - 76px); /* 减去头像宽度(60px) + gap(12px) + 边距(4px) */
     overflow: hidden;
-=======
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
 }
 
 .name-section {
@@ -348,35 +300,22 @@ const navigateToUrl = () => {
     align-items: center;
     gap: 4px;
     flex-wrap: nowrap;
-<<<<<<< HEAD
     overflow: hidden;
     transition: all 0.3s ease;
     min-width: 0;
     width: 100%; /* 确保占满父容器宽度 */
-=======
-    margin-top: 8px;
-    overflow: hidden;
-    transition: all 0.3s ease;
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
 }
 
 .friend-meta.expanded {
     flex-wrap: wrap;
-<<<<<<< HEAD
     overflow: visible;
     height: auto; /* 允许垂直扩展，但不影响水平宽度 */
-=======
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
 }
 
 .meta-tag {
     display: inline-flex;
     align-items: center;
-<<<<<<< HEAD
     padding: 3px 8px;
-=======
-    padding: 2px 6px;
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
     border-radius: 8px;
     font-size: 10px;
     font-weight: 500;
@@ -385,7 +324,6 @@ const navigateToUrl = () => {
     border: none;
     cursor: default;
     flex-shrink: 0;
-<<<<<<< HEAD
     height: 20px;
 }
 
@@ -415,31 +353,6 @@ const navigateToUrl = () => {
     max-width: 120px; /* 限制最大宽度 */
     overflow: hidden;
     text-overflow: ellipsis;
-=======
-}
-
-.major-tag {
-    background: transparent;
-    color: var(--vp-c-text-2);
-    border: 1px solid var(--vp-c-divider);
-    position: relative;
-}
-
-.major-tag::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--vp-c-brand) 0%, var(--vp-c-brand-light) 100%);
-    border-radius: 1px;
-}
-
-.direction-tag {
-    background: var(--vp-c-bg-soft);
-    color: var(--vp-c-text-2);
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
 }
 
 .more-tag {
@@ -447,11 +360,8 @@ const navigateToUrl = () => {
     color: var(--vp-c-brand);
     cursor: pointer;
     font-weight: 600;
-<<<<<<< HEAD
     flex-shrink: 0; /* 防止展开按钮被压缩 */
     min-width: auto; /* 允许按钮根据内容调整大小 */
-=======
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
 }
 
 .more-tag:hover {
@@ -528,30 +438,19 @@ const navigateToUrl = () => {
 :root.dark .friend-card {
     background: var(--vp-c-bg-soft);
     border-color: var(--vp-c-divider);
-<<<<<<< HEAD
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-=======
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
 }
 
 :root.dark .friend-card:hover {
     background: var(--vp-c-bg-mute);
-<<<<<<< HEAD
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     border-color: var(--vp-c-divider-light);
-=======
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
 }
 
 :root.dark .friend-card::before {
     background: linear-gradient(90deg, 
         transparent 0%, 
-<<<<<<< HEAD
         rgba(255, 255, 255, 0.05) 50%, 
-=======
-        rgba(255, 255, 255, 0.1) 50%, 
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
         transparent 100%);
 }
 
@@ -563,7 +462,6 @@ const navigateToUrl = () => {
 :root.dark .template-card:hover {
     border-color: var(--vp-c-brand);
     background: var(--vp-c-bg-mute);
-<<<<<<< HEAD
 }
 
 :root.dark .major-tag {
@@ -580,8 +478,6 @@ const navigateToUrl = () => {
 :root.dark .avatar-year {
     background: var(--vp-c-text-1);
     color: var(--vp-c-bg-soft);
-=======
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
 }
 
 /* 响应式设置 */
@@ -593,13 +489,6 @@ const navigateToUrl = () => {
     .card-header {
         gap: 10px;
         margin-bottom: 6px;
-<<<<<<< HEAD
-=======
-    }
-
-    .card-footer {
-        padding-top: 6px;
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
     }
 
     .friend-avatar {
@@ -639,12 +528,7 @@ const navigateToUrl = () => {
     }
 
     .card-footer {
-<<<<<<< HEAD
         margin-top: 6px;
-=======
-        margin-top: 12px;
-        padding-top: 12px;
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
     }
 }
 
@@ -658,12 +542,6 @@ const navigateToUrl = () => {
         margin-bottom: 6px;
     }
 
-<<<<<<< HEAD
-=======
-    .card-footer {
-        padding-top: 6px;
-    }
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
 
     .name-section {
         flex-direction: column;
@@ -696,12 +574,7 @@ const navigateToUrl = () => {
     }
 
     .card-footer {
-<<<<<<< HEAD
         margin-top: 6px;
-=======
-        margin-top: 10px;
-        padding-top: 10px;
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
     }
 
     .friend-description {

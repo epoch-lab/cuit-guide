@@ -5,11 +5,7 @@
         <div id="selector-container">
             <div class="selector-row">
                 <SelectedUi v-show="isSelectorShow" v-model="selectedYear" :options="enrollmentYears"
-<<<<<<< HEAD
-                    placeholder="选择入学年份" />
-=======
                     placeholder="选择毕业年份" />
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
                 <SelectedUi v-show="isSelectorShow" v-model="selectedMajor" :options="majors" placeholder="选择专业" />
                 <SelectedUi v-show="isSelectorShow" v-model="selectedTechnicalDirection" :options="technicalDirections"
                     placeholder="选择技术方向" />
@@ -26,8 +22,6 @@
                 </div>
             </div>
         </div>
-
-<<<<<<< HEAD
 
         <!-- 骨架屏和友链卡片容器，异步加载，先加载的先显示 -->
         <div id="blog-container">
@@ -320,39 +314,6 @@ const loadFriends = async () => {
         // 确保模板数据在第一位（如果存在）
         if (templateData) {
             friends.value = [templateData, ...friends.value];
-=======
-        for (const path in friendModules) {
-            const module = await friendModules[path]() as { default: Friend };
-            
-            // 检查是否为模板文件
-            if (path.includes('template.json')) {
-                templateData = module.default;
-                continue;
-            }
-            
-            // 去除例子(AAAExample)
-            if (module.default.name === "例子") {
-                continue;
-            }
-            
-            // 添加入数组
-            if (module.default) {
-                friendData.push(module.default);
-            }
-        }
-        
-        // 这里进行排序处理 (排序法: 随机排列)
-        friends.value = friendData.sort(() => Math.random() - 0.5);
-        
-        // 将模板卡片添加到最前面
-        if (templateData) {
-            friends.value.unshift(templateData);
-        }
-        
-        // 方向数组字母排序
-        for (let friend of friends.value) {
-            friend.technicalDirection.sort((a, b) => a.localeCompare(b))
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
         }
         
         // 随机排序（除了模板数据）
@@ -442,14 +403,11 @@ let layoutChangeTimeout: NodeJS.Timeout | undefined;
 // 监测选择器变化
 watch([selectedYear, selectedMajor, selectedTechnicalDirection], () => {
     applyFiltering()
-<<<<<<< HEAD
 })
 
 // 监听数据变化
 watch([filteredFriends, isLoading], () => {
     // 标准网格布局无需特殊处理
-=======
->>>>>>> 2081d2911ccf668b244b5b2e0f21fd506495410a
 })
 
 onMounted(async () => {
