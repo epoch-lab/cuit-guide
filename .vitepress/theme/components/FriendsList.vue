@@ -262,9 +262,6 @@ function copyTemplateToClipboard(templateData) {
 
 // 异步加载友链，快速加载所有数据
 const loadFriends = async () => {
-    const minSkeletonTime = 600; // 减少到 600ms，提升加载速度
-    const start = Date.now();
-    
     // 重置状态
     isLoading.value = true;
     friends.value = [];
@@ -348,11 +345,6 @@ const loadFriends = async () => {
         friends.value = [fallbackFriend];
         filteredFriends.value = [fallbackFriend];
     } finally {
-        // 保证骨架屏最少显示 minSkeletonTime，但时间更短
-        const elapsed = Date.now() - start;
-        if (elapsed < minSkeletonTime) {
-            await new Promise(resolve => setTimeout(resolve, minSkeletonTime - elapsed));
-        }
         isLoading.value = false;
         skeletonCount.value = 0;
     }
