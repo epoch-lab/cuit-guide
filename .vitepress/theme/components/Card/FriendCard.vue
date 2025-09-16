@@ -31,7 +31,7 @@
                             class="meta-tag more-tag"
                             :aria-label="directionsExpanded ? '收起技术方向' : '展开更多技术方向'"
                         >
-                            {{ directionsExpanded ? '收起' : `+${props.friend.technicalDirection.length - maxVisibleDirections}` }}
+                            {{ directionsExpanded ? '收起' : `+${hiddenDirectionsCount}` }}
                         </button>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, nextTick } from 'vue'
 import LazyImage from '../ui/LazyImage.vue'
 
 const props = defineProps({
@@ -74,13 +74,13 @@ const props = defineProps({
     }
 })
 
-const emit = defineEmits(['template-click'])
+const emit = defineEmits(['template-click', 'layout-change'])
 
 // 展开状态管理
 const isExpanded = ref(false)
 const directionsExpanded = ref(false)
 
-// 最大可见方向数量（第一行能显示的数量）
+// 最大可见方向数量（固定值，简化布局）
 const maxVisibleDirections = 2
 
 // 判断是否需要显示展开按钮（描述长度超过60个字符）
@@ -90,7 +90,7 @@ const shouldShowExpandButton = computed(() => {
 
 // 技术方向显示逻辑
 const displayedDirections = computed(() => {
-    if (directionsExpanded.value || props.friend.technicalDirection.length <= maxVisibleDirections) {
+    if (directionsExpanded.value) {
         return props.friend.technicalDirection
     }
     return props.friend.technicalDirection.slice(0, maxVisibleDirections)
@@ -100,13 +100,30 @@ const hasMoreDirections = computed(() => {
     return props.friend.technicalDirection.length > maxVisibleDirections
 })
 
+// 计算隐藏的方向数量
+const hiddenDirectionsCount = computed(() => {
+    return props.friend.technicalDirection.length - maxVisibleDirections
+})
+
+// 触发布局重排的函数
+const triggerLayoutUpdate = () => {
+    // 等待 DOM 更新完成后触发重排
+    nextTick(() => {
+        setTimeout(() => {
+            emit('layout-change');
+        }, 50);
+    });
+};
+
 // 切换展开状态
 const toggleExpanded = () => {
     isExpanded.value = !isExpanded.value
+    triggerLayoutUpdate()
 }
 
 const toggleDirections = () => {
     directionsExpanded.value = !directionsExpanded.value
+    triggerLayoutUpdate()
 }
 
 const navigateToUrl = () => {
@@ -159,6 +176,7 @@ const navigateToUrl = () => {
     border-color: var(--vp-c-divider);
     background: var(--vp-c-bg-soft);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
 }
 
 .friend-card:hover::before {
@@ -167,7 +185,7 @@ const navigateToUrl = () => {
 
 /* 模板卡片特殊样式 */
 .template-card {
-    border: 2px dashed var(--vp-c-brand);
+    border: 1px dashed var(--vp-c-brand);
     background: var(--vp-c-bg);
 }
 
@@ -189,12 +207,11 @@ const navigateToUrl = () => {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .card-footer {
-    margin-top: 0;
-    padding-top: 8px;
+    margin-top: 6px;
     border-top: 1px solid var(--vp-c-divider-light);
 }
 
@@ -261,6 +278,8 @@ const navigateToUrl = () => {
     flex-direction: column;
     gap: 8px;
     min-width: 0;
+    max-width: calc(100% - 76px); /* 减去头像宽度(60px) + gap(12px) + 边距(4px) */
+    overflow: hidden;
 }
 
 .name-section {
@@ -281,19 +300,22 @@ const navigateToUrl = () => {
     align-items: center;
     gap: 4px;
     flex-wrap: nowrap;
-    margin-top: 8px;
     overflow: hidden;
     transition: all 0.3s ease;
+    min-width: 0;
+    width: 100%; /* 确保占满父容器宽度 */
 }
 
 .friend-meta.expanded {
     flex-wrap: wrap;
+    overflow: visible;
+    height: auto; /* 允许垂直扩展，但不影响水平宽度 */
 }
 
 .meta-tag {
     display: inline-flex;
     align-items: center;
-    padding: 2px 6px;
+    padding: 3px 8px;
     border-radius: 8px;
     font-size: 10px;
     font-weight: 500;
@@ -302,13 +324,15 @@ const navigateToUrl = () => {
     border: none;
     cursor: default;
     flex-shrink: 0;
+    height: 20px;
 }
 
 .major-tag {
-    background: transparent;
-    color: var(--vp-c-text-2);
+    background: var(--vp-c-bg-soft);
+    color: var(--vp-c-text-1);
     border: 1px solid var(--vp-c-divider);
     position: relative;
+    font-weight: 500;
 }
 
 .major-tag::after {
@@ -325,6 +349,10 @@ const navigateToUrl = () => {
 .direction-tag {
     background: var(--vp-c-bg-soft);
     color: var(--vp-c-text-2);
+    border-radius: 6px;
+    max-width: 120px; /* 限制最大宽度 */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .more-tag {
@@ -332,6 +360,8 @@ const navigateToUrl = () => {
     color: var(--vp-c-brand);
     cursor: pointer;
     font-weight: 600;
+    flex-shrink: 0; /* 防止展开按钮被压缩 */
+    min-width: auto; /* 允许按钮根据内容调整大小 */
 }
 
 .more-tag:hover {
@@ -408,17 +438,19 @@ const navigateToUrl = () => {
 :root.dark .friend-card {
     background: var(--vp-c-bg-soft);
     border-color: var(--vp-c-divider);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 :root.dark .friend-card:hover {
     background: var(--vp-c-bg-mute);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border-color: var(--vp-c-divider-light);
 }
 
 :root.dark .friend-card::before {
     background: linear-gradient(90deg, 
         transparent 0%, 
-        rgba(255, 255, 255, 0.1) 50%, 
+        rgba(255, 255, 255, 0.05) 50%, 
         transparent 100%);
 }
 
@@ -432,6 +464,22 @@ const navigateToUrl = () => {
     background: var(--vp-c-bg-mute);
 }
 
+:root.dark .major-tag {
+    background: var(--vp-c-bg-mute);
+    color: var(--vp-c-text-1);
+    border-color: var(--vp-c-divider-light);
+}
+
+:root.dark .direction-tag {
+    background: var(--vp-c-bg-mute);
+    color: var(--vp-c-text-2);
+}
+
+:root.dark .avatar-year {
+    background: var(--vp-c-text-1);
+    color: var(--vp-c-bg-soft);
+}
+
 /* 响应式设置 */
 @media (max-width: 768px) {
     .card-content {
@@ -441,10 +489,6 @@ const navigateToUrl = () => {
     .card-header {
         gap: 10px;
         margin-bottom: 6px;
-    }
-
-    .card-footer {
-        padding-top: 6px;
     }
 
     .friend-avatar {
@@ -484,8 +528,7 @@ const navigateToUrl = () => {
     }
 
     .card-footer {
-        margin-top: 12px;
-        padding-top: 12px;
+        margin-top: 6px;
     }
 }
 
@@ -499,9 +542,6 @@ const navigateToUrl = () => {
         margin-bottom: 6px;
     }
 
-    .card-footer {
-        padding-top: 6px;
-    }
 
     .name-section {
         flex-direction: column;
@@ -534,8 +574,7 @@ const navigateToUrl = () => {
     }
 
     .card-footer {
-        margin-top: 10px;
-        padding-top: 10px;
+        margin-top: 6px;
     }
 
     .friend-description {

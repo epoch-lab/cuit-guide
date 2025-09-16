@@ -1,13 +1,12 @@
 {
   "name": "你的姓名",
-  "enrollmentYear": 2024,
+  "enrollmentYear": "入学年份",
   "major": "你的专业",
   "technicalDirection": [
     "技术方向1",
     "技术方向2",
-    "更多方向..."
-  ],
+    "更多方向..."  ],
   "link": "https://your-website.com",
-  "avatar": "https://via.placeholder.com/72x72/6366f1/ffffff?text=头像",
+  "avatar": "https://devtool.tech/api/placeholder/72/72?text=%E5%A4%B4%E5%83%8F&bgColor=%23ffffff&fontSize=30",
   "description": "点击此卡片获取加入友链的模板格式 📋 复制后修改为你的信息即可！如需加入请提交PR或联系管理员~"
 }

@@ -5,7 +5,7 @@
         <div id="selector-container">
             <div class="selector-row">
                 <SelectedUi v-show="isSelectorShow" v-model="selectedYear" :options="enrollmentYears"
-                    placeholder="选择毕业年份" />
+                    placeholder="选择入学年份" />
                 <SelectedUi v-show="isSelectorShow" v-model="selectedMajor" :options="majors" placeholder="选择专业" />
                 <SelectedUi v-show="isSelectorShow" v-model="selectedTechnicalDirection" :options="technicalDirections"
                     placeholder="选择技术方向" />
@@ -23,20 +23,22 @@
             </div>
         </div>
 
-        <!-- 骨架屏加载状态 -->
-        <div id="blog-container" v-if="isLoading">
-            <SkeletonCard v-for="n in 6" :key="n" />
-        </div>
 
-        <!-- 友链卡片容器 -->
-        <div id="blog-container" v-else>
-            <FriendCard 
-                v-for="friend in filteredFriends" 
-                :friend="friend" 
-                :key="friend.name"
-                :is-template="friend.name === '你的姓名'"
-                @template-click="copyTemplateToClipboard"
-            />
+        <!-- 骨架屏和友链卡片容器，异步加载，先加载的先显示 -->
+        <div id="blog-container">
+            <template v-if="isLoading">
+                <SkeletonCard v-for="n in skeletonCount" :key="n" />
+            </template>
+            <template v-else>
+                <FriendCard 
+                    v-for="friend in filteredFriends" 
+                    :friend="friend" 
+                    :key="friend.name"
+                    :is-template="friend.name === '你的姓名'"
+                    @template-click="copyTemplateToClipboard"
+                    @layout-change="handleLayoutChange"
+                />
+            </template>
         </div>
 
         <!-- 空状态 -->
@@ -62,7 +64,8 @@ import EmptyState from "./ui/EmptyState.vue";
 import SelectedUi from "./ui/SelectedUi.vue";
 import FriendCard from "./Card/FriendCard.vue";
 import SkeletonCard from "./ui/SkeletonCard.vue";
-import { ref, onMounted, type Ref, watch } from "vue"
+import { nextTick } from 'vue';
+import { ref, onMounted, onUnmounted, type Ref, watch } from "vue"
 
 interface Friend {
     name: string,
@@ -91,6 +94,8 @@ interface technicalDirectionOption {
 
 // 加载中状态
 const isLoading = ref(true);
+// 骨架屏数量
+const skeletonCount = ref(12);
 
 // 图标路径
 const filterPath = "M608.24 960c-17.72 0-32-14.28-32-32V448.1c0-7.91 2.92-15.65 8.26-21.5l208.82-234.46L230.5 192.14 439.67 426.77c5.16 5.85 8.08 13.42 8.08 21.33v288.81l50.92 41.11c13.76 11.18 15.82 31.31 4.82 45.07-11.01 13.76-31.31 15.82-45.07 4.82l-51.76-42.05V460.14L135.2 181.3c-8.43-9.46-10.49-22.88-5.33-34.4 5.16-11.53 16.69-18.92 29.24-18.92h706.29c12.73 0 24.08 7.4 29.24 19.1 5.16 11.52 2.92 25.11-5.5 34.4L640.24 460.31v467.7c0 17.72-14.28 32-32 32z"
@@ -256,50 +261,101 @@ function copyTemplateToClipboard(templateData) {
         });
 }
 
-// 初始加载
+// 异步加载友链，快速加载所有数据
 const loadFriends = async () => {
+    const minSkeletonTime = 600; // 减少到 600ms，提升加载速度
+    const start = Date.now();
+    
+    // 重置状态
+    isLoading.value = true;
+    friends.value = [];
+    filteredFriends.value = [];
+    
     try {
-        const friendModules = import.meta.glob('@data/friends/*.json');
+        // 加载友链数据
+        const friendModules = import.meta.glob('../data/friends/*.json', { eager: true });
+        // console.log('找到友链文件:', Object.keys(friendModules));
+        
+        // 过滤掉不相关的文件
+        const friendFiles = Object.entries(friendModules).filter(([path]) => 
+            path.includes('/friends/') && 
+            path.endsWith('.json')
+        );
+        
+        // console.log('过滤后的友链文件:', friendFiles.map(([path]) => path));
+        
         const friendData: Friend[] = [];
         let templateData: Friend | null = null;
         
-        for (const path in friendModules) {
-            const module = await friendModules[path]() as { default: Friend };
-            
-            // 检查是否为模板文件
-            if (path.includes('template.json')) {
-                templateData = module.default;
-                continue;
-            }
-            
-            // 去除例子(AAAExample)
-            if (module.default.name === "例子") {
-                continue;
-            }
-            
-            // 添加入数组
-            if (module.default) {
-                friendData.push(module.default);
+        // 骨架屏数量完全等于友链文件数量
+        const totalCount = friendFiles.length;
+        skeletonCount.value = Math.max(1, totalCount); // 至少显示1个骨架屏
+
+        // 快速处理所有友链数据，不再有延时
+        for (let i = 0; i < friendFiles.length; i++) {
+            const [path, module] = friendFiles[i];
+            try {
+                const data = (module as { default: Friend }).default;
+                // console.log('处理文件:', path, '数据:', data);
+                
+                // 检查是否为模板文件
+                if (path.includes('template.json') || data?.name === '你的姓名') {
+                    templateData = data;
+                } else if (data && data.name && data.name !== "例子") {
+                    // 添加有效数据
+                    friendData.push(data);
+                    friends.value.push(data);
+                    
+                    // 保持 technicalDirection 的原始填写顺序
+                }
+            } catch (err) {
+                console.error(`Failed to process friend data from ${path}:`, err);
             }
         }
-        
-        // 这里进行排序处理 (排序法: 随机排列)
-        friends.value = friendData.sort(() => Math.random() - 0.5);
-        
-        // 将模板卡片添加到最前面
+        // 确保模板数据在第一位（如果存在）
         if (templateData) {
-            friends.value.unshift(templateData);
+            friends.value = [templateData, ...friends.value];
         }
         
-        // 方向数组字母排序
-        for (let friend of friends.value) {
-            friend.technicalDirection.sort((a, b) => a.localeCompare(b))
+        // 随机排序（除了模板数据）
+        const template = friends.value.find(f => f.name === '你的姓名');
+        const others = friends.value.filter(f => f.name !== '你的姓名');
+        others.sort(() => Math.random() - 0.5);
+        
+        if (template) {
+            friends.value = [template, ...others];
+        } else {
+            friends.value = others;
         }
+        
+        // 保持 technicalDirection 的原始填写顺序，不进行排序
+        
         filteredFriends.value = friends.value;
+        
+        // console.log('加载完成，共加载了', friends.value.length, '个友链');
     } catch (error) {
         console.error("加载资源失败", error);
+        
+        // 如果加载失败，至少创建一个示例友链
+        const fallbackFriend: Friend = {
+            name: "加载失败",
+            enrollmentYear: 2024,
+            major: "未知专业",
+            technicalDirection: ["暂无"],
+            link: "#",
+            avatar: "https://via.placeholder.com/60",
+            description: "数据加载失败，这是一个备用示例。"
+        };
+        friends.value = [fallbackFriend];
+        filteredFriends.value = [fallbackFriend];
     } finally {
+        // 保证骨架屏最少显示 minSkeletonTime，但时间更短
+        const elapsed = Date.now() - start;
+        if (elapsed < minSkeletonTime) {
+            await new Promise(resolve => setTimeout(resolve, minSkeletonTime - elapsed));
+        }
         isLoading.value = false;
+        skeletonCount.value = 0;
     }
 }
 
@@ -336,15 +392,36 @@ const getSelectorsData = () => {
     technicalDirections.value.sort((a, b) => a.label.localeCompare(b.label));
 }
 
+// 处理卡片布局变化
+const handleLayoutChange = () => {
+    // 简化布局变化处理，标准网格布局无需重排
+    console.log('卡片内容已更改');
+}
+
+// 布局变化的防抖定时器
+let layoutChangeTimeout: NodeJS.Timeout | undefined;
+
 // 监测选择器变化
 watch([selectedYear, selectedMajor, selectedTechnicalDirection], () => {
     applyFiltering()
 })
 
+// 监听数据变化
+watch([filteredFriends, isLoading], () => {
+    // 标准网格布局无需特殊处理
+})
+
 onMounted(async () => {
     await loadFriends();
     getSelectorsData();
-})
+});
+
+// 组件卸载时清理事件监听
+onUnmounted(() => {
+    if (layoutChangeTimeout) {
+        clearTimeout(layoutChangeTimeout);
+    }
+});
 </script>
 
 <style scoped>
@@ -543,7 +620,6 @@ onMounted(async () => {
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 20px;
-    grid-auto-rows: max-content;
 }
 
 @media (max-width: 1080px) {
