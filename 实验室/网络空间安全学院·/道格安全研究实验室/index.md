@@ -2,7 +2,7 @@
 
 >**道之若极，行必有格**
 >
->D0g3更多信息尽在官网：http://www.d0g3.cn/
+>D0g3 更多信息尽在官网：http://www.d0g3.cn/
 
 ## 简介
 
@@ -28,7 +28,7 @@ D0g3 是一支非常年轻的队伍，对技术的热爱和坚持让各个年级
 
 ## 社团招新
 
-道格实验室每年都会进行招新，方向有:
+道格实验室每年都会进行招新，方向有：
 
 * Web
 * 逆向（reverse）
@@ -113,11 +113,11 @@ D0g3 是一支非常年轻的队伍，对技术的热爱和坚持让各个年级
 
 * GRYS - 博客园 https://www.cnblogs.com/gaorenyusi
 
-* pRism的博客：http://www.pri87.vip/
+* pRism 的博客：http://www.pri87.vip/
 
 * tammy66 - 博客园 https://www.cnblogs.com/tammy66
   
-* cyr1s的博客：https://cyr1s-dev.github.io/
+* cyr1s 的博客：https://cyr1s-dev.github.io/
 
 最后，再次附上我们实验室的招新群，期待大家的到来呀嘿嘿ξ( ✿＞◡❛) 群号是 **901392792**
 
