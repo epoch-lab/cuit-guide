@@ -1,14 +1,22 @@
 <template>
-  <WelcomeModal ref="modalRef" :image-url="modalConfig.imageUrl" :title="modalConfig.title"
-    :description="modalConfig.description" :partycode="modalConfig.partycode" :confirm-text="modalConfig.confirmText"
-    :cancel-text="modalConfig.cancelText" @close="handleModalClose" @confirm="handleModalConfirm" />
+  <WelcomeModal
+    ref="modalRef"
+    :image-url="modalConfig.imageUrl"
+    :title="modalConfig.title"
+    :description="modalConfig.description"
+    :partycode="modalConfig.partycode"
+    :confirm-text="modalConfig.confirmText"
+    :qqGroupUrl="modalConfig.qqGroupUrl"
+    :cancel-text="modalConfig.cancelText"
+    @close="handleModalClose"
+    @confirm="handleModalConfirm"/>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-import { useRouter } from 'vitepress'
+import {ref, onMounted, onUnmounted} from 'vue'
+import {useRouter} from 'vitepress'
 import WelcomeModal from './WelcomeModal.vue'
-import PartyImage from './images/party.svg'
+import PartyImage from './images/qrcode.jpeg'
 
 interface ModalConfig {
   imageUrl?: string
@@ -32,9 +40,10 @@ const modalConfig = {
   imageUrl: PartyImage,
   title: '欢迎来到 CUIT 指南！',
   description: '这里汇集了成都信息工程大学的各种实用信息和资源，包括学习资料、技术社团、校友网络等。希望能为你的校园生活和职业发展提供帮助。记得收藏本站，随时查看最新内容！',
-  confirmText: '开始探索',
+  confirmText: '点击加群',
   partycode: '用户反馈群：973721542',
-  cancelText: '稍后再看',
+  cancelText: '稍后再说',
+  qqGroupUrl: 'https://qm.qq.com/q/WLSF61eKSk',
   ...props.config
 }
 

@@ -1,33 +1,44 @@
 <template>
   <Transition name="modal">
-    <div v-if="showModal" class="modal-overlay" @click="closeModal">
+    <div v-if="showModal" v-show="imageReady" class="modal-overlay" @click="closeModal">
       <div class="modal-content" @click.stop>
         <button class="modal-close" @click="closeModal" aria-label="关闭弹窗">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </button>
 
         <div class="modal-body">
           <!-- 图片部分 -->
           <div class="modal-image">
-            <img :src="imageUrl" :alt="imageAlt" />
+            <img
+              :src="props.imageUrl"
+              :alt="props.imageAlt"
+              @load="handleImageLoad"
+              @error="handleImageError"
+            />
           </div>
 
           <!-- 文字内容 -->
           <div class="modal-text">
-            <h2 class="modal-title">{{ title }}</h2>
-            <div class="modal-description">{{ description }}</div>
-            <div>{{ partycode }}</div>
+            <h2 class="modal-title">{{ props.title }}</h2>
+            <div class="modal-description">{{ props.description }}</div>
+            <div>{{ props.partycode }}</div>
           </div>
 
           <!-- 操作按钮 -->
           <div class="modal-actions">
-            <button class="btn-primary" @click="handleConfirm">
-              {{ confirmText }}
-            </button>
+            <a
+              :href="props.qqGroupUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary"
+              @click="handleConfirm"
+            >
+              {{ props.confirmText }}
+            </a>
             <button class="btn-secondary" @click="closeModal">
-              {{ cancelText }}
+              {{ props.cancelText }}
             </button>
           </div>
         </div>
@@ -37,36 +48,46 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import {ref, onMounted, onUnmounted} from 'vue'
+
 
 interface Props {
-  imageUrl?: string
+  imageUrl: string
   imageAlt?: string
-  title?: string
-  description?: string
+  title: string
+  description: string
   partycode?: string
-  confirmText?: string
-  cancelText?: string
+  confirmText: string
+  qqGroupUrl: string
+  cancelText: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  imageUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjZjNmNGY2Ii8+CjxwYXRoIGQ9Ik0xMDAgNDBMMTYwIDEyMEg0MEwxMDAgNDBaIiBmaWxsPSIjNjM2NmYxIi8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjE0MCIgcj0iMjAiIGZpbGw9IiM2MzY2ZjEiLz4KPC9zdmc+',
   imageAlt: '欢迎图片',
-  title: '欢迎来到 CUIT 指南！',
-  description: '这里汇集了成都信息工程大学的各种实用信息和资源，希望能为你的校园生活提供帮助。记得收藏本站，随时查看最新内容！',
-  partycode: '',
-  confirmText: '好的，知道了',
-  cancelText: '下次再说'
+  partycode: ''
 })
 
 const emit = defineEmits(['close', 'confirm'])
 
 const showModal = ref(false)
+const imageReady = ref(false)
+const pendingOpen = ref(false)
 
 // 显示弹窗
 const openModal = () => {
+  imageReady.value = false
+  pendingOpen.value = true
   showModal.value = true
   document.body.style.overflow = 'hidden'
+}
+const handleImageLoad = () => {
+  imageReady.value = true
+  pendingOpen.value = false
+}
+
+const handleImageError = () => {
+  imageReady.value = true
+  pendingOpen.value = false
 }
 
 // 关闭弹窗
