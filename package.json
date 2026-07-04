@@ -9,6 +9,7 @@
   },
   "packageManager": "pnpm@10.24.0",
   "devDependencies": {
+    "@types/qrcode": "^1.5.6",
     "autocorrect-node": "^2.11.1",
     "sass": "^1.77.8",
     "scss": "^0.2.4",
@@ -19,6 +20,8 @@
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
     "@types/node": "^24.0.5",
-    "pinia": "^3.0.3"
+    "html-to-image": "^1.11.13",
+    "pinia": "^3.0.3",
+    "qrcode": "^1.5.4"
   }
 }
