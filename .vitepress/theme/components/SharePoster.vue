@@ -212,7 +212,7 @@ async function fillPosterContent() {
   if (lastUpdated.value) {
     const updateNode = document.createElement("div");
     updateNode.className = "poster-article-update";
-    updateNode.textContent = lastUpdated.value.replace('Last updated: ', '最近更新：');
+    updateNode.textContent = lastUpdated.value;
     Object.assign(updateNode.style, {
       margin: "16px 0 18px",
       color: "#6b7280",
@@ -239,7 +239,7 @@ const lastUpdated = computed(() => {
   }
   const date = new Date(page.value.lastUpdated);
   const pad = (n: number) => String(n).padStart(2, "0");
-  return `Last updated: ${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()} ${pad(date.getHours())}:${pad(date.getMinutes())}`;
+  return `更新于：${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}`;
 });
 </script>
 
@@ -585,7 +585,7 @@ const lastUpdated = computed(() => {
   flex-direction: column;
   background: #fff;
   color: #111;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
 }
 
 .poster-main {
@@ -648,6 +648,7 @@ const lastUpdated = computed(() => {
   font-size: 18px;
   font-weight: 500;
   line-height: 1;
+  font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
 }
 
 @media (max-width: 768px) {
