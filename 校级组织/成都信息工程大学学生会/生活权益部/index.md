@@ -2,4 +2,4 @@
 
 欢迎加入成都信息工程大学学生会生活权益部！
 
-<img src="生活权益部.assets/image-20260716100522551.png" alt="image-20260716100522551" style="zoom:25%;" />
+<img src="./生活权益部_assets/image-20260716100522551.png" alt="image-20260716100522551" style="zoom:25%;" />

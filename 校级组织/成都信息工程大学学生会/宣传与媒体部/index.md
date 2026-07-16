@@ -1,28 +1,28 @@
 # 宣传与媒体部
 
-<img src="宣传与媒体部.assets/image-20260716095512598.png" alt="image-20260716095512598" style="zoom: 33%;" align="left" />
+<img src="./宣传与媒体部_assets/image-20260716095512598.png" alt="image-20260716095512598" style="zoom: 33%;" align="left" />
 
 
 
-<img src="宣传与媒体部.assets/image-20260715163706991.png" alt="image-20260715163706991" style="zoom: 25%;" />
+<img src="./宣传与媒体部_assets/image-20260715163706991.png" alt="image-20260715163706991" style="zoom: 25%;" />
 
 成都信息工程大学学生会宣传与媒体部（以下简称“宣媒”），是负责实现成都信息工程大学学生会对外宣传的职能部门。宣媒部门内下设六大小组，负责不同社交媒体平台的宣传职能。
 
-<img src="宣传与媒体部.assets/image-20260716100250941.png" alt="image-20260716100250941" style="zoom:33%;" />
+<img src="./宣传与媒体部_assets/image-20260716100250941.png" alt="image-20260716100250941" style="zoom:33%;" />
 
 ## 视频组🎬
 
 视频组负责抖音、bilibili两个视频平台的宣传职能。
 
-<img src="宣传与媒体部.assets/image-20260715164550581.png" alt="image-20260715164550581" style="zoom: 25%;" />
+<img src="./宣传与媒体部_assets/image-20260715164550581.png" alt="image-20260715164550581" style="zoom: 25%;" />
 
 小组主要围绕校园活动、学风宣传、校园风光、学生日常等内容完成全流程创作，从脚本策划、现场拍摄、后期剪辑到平台发布、评论互动均独立完成。迎新晚会、校园十佳歌手、“青春榜样”颁奖典礼暨五四文艺汇演等校级大型活动的纪实短视频、活动高光花絮由本组一手制作；同时结合同学们关心的食堂、宿舍、校园设施等话题产出各类原创视频，借助抖音、B 站的传播优势，直观展示校园风貌与学生会工作，用年轻化短视频形式传递校园正能量，搭建面向全校学生的视频宣传窗口。
 
-<img src="宣传与媒体部.assets/image-20260715164126447.png" alt="image-20260715164126447" style="zoom: 25%;" />
+<img src="./宣传与媒体部_assets/image-20260715164126447.png" alt="image-20260715164126447" style="zoom: 25%;" />
 
 尽管你不会剪辑视频，学长学姐都会耐心教你哦！！只要你热爱视频录制、视频剪辑和媒体账号运营，我们都欢迎你的加入！
 
-<img src="宣传与媒体部.assets/image-20260715164852740.png" alt="image-20260715164852740" style="zoom:33%;" />
+<img src="./宣传与媒体部_assets/image-20260715164852740.png" alt="image-20260715164852740" style="zoom:33%;" />
 
 ## 微信组📜
 
@@ -32,7 +32,7 @@
 
 尽管你不会推文排版工具也有学长学姐教你哦！
 
-<img src="宣传与媒体部.assets/image-20260715170215366.png" alt="image-20260715170215366" style="zoom:33%;" />
+<img src="./宣传与媒体部_assets/image-20260715170215366.png" alt="image-20260715170215366" style="zoom:33%;" />
 
 ## 小Q组🐧
 
@@ -42,29 +42,29 @@
 
 小红书：
 
-<img src="宣传与媒体部.assets/image-20260716094121968.png" alt="image-20260716094121968" style="zoom: 25%;" />
+<img src="./宣传与媒体部_assets/image-20260716094121968.png" alt="image-20260716094121968" style="zoom: 25%;" />
 
 QQ空间：
 
-<img src="宣传与媒体部.assets/image-20260716094241635.png" alt="image-20260716094241635" style="zoom: 25%;" />
+<img src="./宣传与媒体部_assets/image-20260716094241635.png" alt="image-20260716094241635" style="zoom: 25%;" />
 
 ## 美工组🎨
 
 美工组是校学生会视觉内容创作核心团队，负责全品类视觉物料设计产出，覆盖线上宣传、线下活动、部门形象全场景需求。 针对校园各类大型活动，独立完成整套宣传视觉设计，像毕业草坪音乐节、节日主题活动、校级晚会主视觉海报、系列宣传展板、易拉宝均由本组设计；同步产出活动落地所需实用物料，包括活动门票、节目单、舞台背景等，为活动预热、现场布置提供全套设计素材。
 
-<img src="宣传与媒体部.assets/image-20260715170809901.png" alt="image-20260715170809901" style="zoom:33%;" />
+<img src="./宣传与媒体部_assets/image-20260715170809901.png" alt="image-20260715170809901" style="zoom:33%;" />
 
  结合二十四节气、校园节日节点创作专题视觉海报，适配公众号推文、短视频封面等线上平台使用；同时负责学生会内部视觉形象打造，定制专属部门工牌，结合校园热点、学生会日常工作创作主题表情包，用于推文配图、部门线上交流，丰富宣传内容的趣味性。 日常配合文字、视频宣传板块输出配套图片素材，统一规范学生会整体视觉风格，用创意设计展现校园青春风貌，支撑学生会各类宣传工作完整落地。
 
-<img src="宣传与媒体部.assets/image-20260715170803170.png" alt="image-20260715170803170" style="zoom:33%;" />
+<img src="./宣传与媒体部_assets/image-20260715170803170.png" alt="image-20260715170803170" style="zoom:33%;" />
 
 ## 摄影组📷
 
 摄影组的主要职能是在学生会举办的各种大型活动中进行照片素材的拍摄，以及校园风光的纪实拍摄。拍摄到的素材提供给其他各组制作海报、推文、插入视频剪辑等。如果你爱好摄影，宣媒摄影组欢迎你！
 
-<div style="text-align: center;">  <img src="宣传与媒体部.assets/image-20260716092532728.png" alt="image-20260716092532728" style="zoom: 33%;" /> <img src="宣传与媒体部.assets/image-20260716092538171.png" alt="image-20260716092538171" style="zoom: 33%;" /> </div>
+<div style="text-align: center;">  <img src="./宣传与媒体部_assets/image-20260716092532728.png" alt="image-20260716092532728" style="zoom: 33%;" /> <img src="./宣传与媒体部_assets/image-20260716092538171.png" alt="image-20260716092538171" style="zoom: 33%;" /> </div>
 
-<div style="text-align: center;"><img src="宣传与媒体部.assets/image-20260716092545074.png" alt="image-20260716092545074" style="zoom: 33%;" /> <img src="宣传与媒体部.assets/image-20260716092550678.png" alt="image-20260716092550678" style="zoom: 25%;" /></div>
+<div style="text-align: center;"><img src="./宣传与媒体部_assets/image-20260716092545074.png" alt="image-20260716092545074" style="zoom: 33%;" /> <img src="./宣传与媒体部_assets/image-20260716092550678.png" alt="image-20260716092550678" style="zoom: 25%;" /></div>
 
 
 
@@ -76,11 +76,11 @@ QQ空间：
 
 文秘组负责统筹好部门的例会、团建及跨部门对接工作。
 
-<div><img src="宣传与媒体部.assets/image-20260716093136568.png" alt="image-20260716093136568" style="zoom: 50%;" /><img src="宣传与媒体部.assets/image-20260716093200470.png" alt="image-20260716093200470" style="zoom:50%;" /></div>
+<div><img src="./宣传与媒体部_assets/image-20260716093136568.png" alt="image-20260716093136568" style="zoom: 50%;" /><img src="./宣传与媒体部_assets/image-20260716093200470.png" alt="image-20260716093200470" style="zoom:50%;" /></div>
 
-<div><img src="宣传与媒体部.assets/image-20260716093200470.png" alt="image-20260716093200470" style="zoom:50%;" /><img src="宣传与媒体部.assets/image-20260716093210649.png" alt="image-20260716093210649" style="zoom:50%;" /></div>
+<div><img src="./宣传与媒体部_assets/image-20260716093200470.png" alt="image-20260716093200470" style="zoom:50%;" /><img src="./宣传与媒体部_assets/image-20260716093210649.png" alt="image-20260716093210649" style="zoom:50%;" /></div>
 
-<div><img src="宣传与媒体部.assets/image-20260716093226346.png" alt="image-20260716093226346" style="zoom:50%;" /><img src="宣传与媒体部.assets/image-20260716093230704.png" alt="image-20260716093230704" style="zoom:50%;" /></div>
+<div><img src="./宣传与媒体部_assets/image-20260716093226346.png" alt="image-20260716093226346" style="zoom:50%;" /><img src="./宣传与媒体部_assets/image-20260716093230704.png" alt="image-20260716093230704" style="zoom:50%;" /></div>
 
 
 
@@ -88,5 +88,5 @@ QQ空间：
 
 🎉如果你很幸运在cuit-guide看到了宣媒的介绍，那么恭喜你，只要你扫描下方QQ群二维码，即可获得提前轻松加入的机会！💐宣媒是个很大的大家庭，每年都会招新很多新同学，不要担心自己能力不足而无法加入或有其他顾虑，我们欢迎每一位新生宝宝的到来！任何你不懂的问题学长学姐都会热情耐心解答，帮你解答初入校园时的各种疑问，帮助你少踩许多坑。喵~🥳
 
-<img src="宣传与媒体部.assets/image-20260716094823558.png" alt="image-20260716094823558" style="zoom:25%;" />
+<img src="./宣传与媒体部_assets/image-20260716094823558.png" alt="image-20260716094823558" style="zoom:25%;" />
 
