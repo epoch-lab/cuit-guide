@@ -1,11 +1,11 @@
 {
   "name": "电子爱好者协会",
   "shortName": "ICEC",
-  "technologyStack": ["电子", "竞赛"],
+  "technologyStack": ["功率", "测控", "高频"],
   "college": "校级直属",
-  "location": "成都信息工程大学",
+  "location": "二食堂三楼",
   "QQ": "1095150649",
-  "description": "",
+  "description": " 一切动力源于对电子的热爱",
   "link": "",
   "introduction": "../../../../实验室/校级实验室/电子爱好者协会"
 }
