@@ -1,6 +1,6 @@
 # 非同凡想游戏开发协会
 
-非同凡想游戏开发协会（ThinkDifferentStudio，简称 TDS）是由以成都信息工程大学学生为主体的大学生创业团队创建的游戏开发组织，初创于 2021 年 5 月，成立至今已有 3 年时间，正在逐渐形成完备的内部人才培养体系和标准的内容生产规范管线。
+非同凡想游戏开发协会（ThinkDifferentStudio，简称 TDS）是由以成都信息工程大学学生为主体的大学生创业团队创建的游戏开发组织，初创于 2021 年 5 月，成立至今已有 4 年时间，正在逐渐形成完备的内部人才培养体系和标准的内容生产规范管线。
 
 ![TDS](logo.png)
 
@@ -28,17 +28,28 @@
 ### 大家一起来玩游戏
 
 ![pic03](pic03.png)
+![pic07](pic07.png)
+![pic08](pic08.png)
+![pic09](pic09.png)
 
 ### 搬东西
 
 ![pic04](pic04.png)
+
+### 卢德工作室宣讲
+
+![pic05](pic05.png)
+
+### 聚餐
+
+![pic06](pic06.png)
 
 ## 我们如何招新
 
 我们的招新群：
 ***[750598748](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=VzbQu3XrzJlIvjOFvYe-g7eoqLvc1RoC&authKey=HTNtFxWoZNd5JYq7K4ciRv%2FoJnSWQOiO8AGS%2BlqrUckazxHESFhMpxRPZNftXmn2&noverify=0&group_code=750598748)***
 
-![二维码](image.png)
+![二维码](image.jpg)
 
 <style scoped>
     .tooltip {

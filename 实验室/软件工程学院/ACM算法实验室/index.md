@@ -107,3 +107,7 @@ CUIT-ACM 新生交流群：758762821
 [洛谷](https://www.luogu.com.cn/)：国内的算法竞赛 OJ 平台，更适合中国算竞选手体质，有专门的训练题单与题库以及交流社区，也会不定时地举办线上比赛。
 
 [OI Wiki](https://oi-wiki.org/)：OI Wiki 是一个免费开放且持续更新的知识整合站点。其中收录了许多竞赛相关的知识，包括竞赛中的基础知识、常见题型、解题思路以及常用工具等内容。
+
+[CUIT Wiki](https://cuit-wiki.crotes.top/)和OI Wiki使用同样前端框架的算法知识整合站点，相较于OI Wiki的区别是大部分内容是CUIT学生编写的
+
+[CUIT_XCPC](https://github.com/CurryWOE/CUIT_XCPC)算法笔记与算法模板仓库，持续更新中
