@@ -2,7 +2,6 @@
 title: 关于本项目
 order: 1
 ---
-
 # 这是做什么的？
 
 成都信息工程大学 (Chengdu University of Information Technology, 简称 CUIT, 或者~~信砖~~,~~驾校~~) 指南是一个公益性质的项目的文档项目;
@@ -49,12 +48,12 @@ git clone 这里的链接：
 
 可以选择自行提交 pr
 
-1. 先 fork 一下
-2. git clone 项目的链接
+1. 先 fork 本仓库到自己的仓库中
+2. git clone 自己仓库的项目链接
 3. 在实验室列表界面中点击获取格式
 4. 在项目中找到/src/data/labs/按照格式输入实验室的相关 json 信息即可
 5. 最后再发起合并请求
-6. 如果是略懂前端的小伙伴，烦请在代码修改之后，提交之前先 build 一下，否则过不了 CI/CD 哦！
+6. *如果是略懂前端的小伙伴，烦请在代码修改之后，提交之前先 build 一下，否则过不了 CI/CD 哦！
 
 或者直接联系回声实验室哦
 
@@ -65,7 +64,7 @@ git clone 这里的链接：
 
 ## 联系我们：
 
-2025 回声公众群：625653626
+2026 回声公众群：625653626
 guide 公众群：973721542
 
 ![Visitor Counter](https://count.getloli.com/get/@cuit-guide?theme=moebooru)

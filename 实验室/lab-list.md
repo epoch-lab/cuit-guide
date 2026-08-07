@@ -6,7 +6,6 @@ aside: false
 sidebar: true
 footer: false
 ---
-
 <script setup>
 import LabList from '../.vitepress/theme/components/LabList.vue'
 </script>
