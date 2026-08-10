@@ -18,6 +18,24 @@
 
 你将可以在与大家的沟通中学会合作，相互帮助的重要性，你将获得与你相互扶持，一起学习的朋友。
 
+## 非同凡想能为你带来什么
+
+丰富完备的学习资源与学习路线
+在协会内部，我们分别设立了**程序组**（包含客户端方向与图形方向），**策划组**，**美术组**，**web组**，**音乐组**（正在筹备重生中），其中我们的**程序组**，**策划组**和**web组**均拥有完备的学习路线与学习资源，音乐组和美术组更偏向爱好者交流地，并不能提供专业性较强的体系性培训（还望大家能理解，毕竟咱们是理工科类的学校）
+
+各个组的招新文档:
+程序组招新总文档:[【TDS】程序方向招新-CREATE A NEW WORLD](https://thinkdifferent-club.feishu.cn/wiki/XH9gwA8sSi6Pvik4yS4c4zKPn1e?from=from_copylink)
+- 客户端方向招新文档:[【TDSC】客户端方向招新](https://thinkdifferent-club.feishu.cn/wiki/KboKwWuami14ftkbrPJcGG5inof?from=from_copylink)
+- 图形方向招新文档:[图形方向招新文档](https://thinkdifferent-club.feishu.cn/wiki/UTOdwugsNiVXtckjt5CcmK8pn7b?from=from_copylink)
+
+策划组招新文档:[非同凡想游戏开发协会之策划组介绍](https://my.feishu.cn/wiki/B8CtwED86iIYvHk0t0WcugvAnze?from=from_copylink)
+
+美术组招新文档:[美术组介绍](https://ccnetgsxmnxg.feishu.cn/wiki/TeDIwUL1Ci8rVSk4Vf9cOor8ndf)
+
+web组招新文档:[【TDS】 2026 Web开发组招新文档](https://thinkdifferent-club.feishu.cn/docx/Wnadd4GIOobKeaxIvQDcHuB3n0e?from=from_copylink)
+
+音乐组招新文档：[【TDS】旋律再起，共谱新章 - 2026音频组招新](https://thinkdifferent-club.feishu.cn/wiki/TFuIwD2wAiE9jmkCNMKcNy3knYe?from=from_copylink)
+
 ## 我们的团建以及比赛活动
 
 ### 参加线下游戏开发比赛
