@@ -89,7 +89,7 @@
 招新群：921101436
 二维码：
 
-<img src ="https://vip.helloimg.com/i/2024/08/29/66d02fabe5992.jpg" width="500px" height="700px"/>
+<img src ="./qrcode2026.jpg" width="500px" height="700px"/>
 
 ## 总体招新方案及培养方案
 
