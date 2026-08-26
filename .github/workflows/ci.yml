@@ -11,12 +11,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up `pnpm`
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
+
+      # Install Node.js and cache the pnpm store via cache: pnpm.
+      # When dependencies (pnpm-lock.yaml) are unchanged, the cache is hit 
+      # and the whole dependency download is skipped.
+      - name: Setup Node.js with pnpm cache
+        uses: actions/setup-node@v7
         with:
-          run_install: true
+          node-version: 22
+          cache: pnpm
+
+      # Install dependencies from the lockfile 
+      # so CI matches the local environment (near-instant when deps are unchanged).
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Cache VitePress's Vite pre-bundled deps (saves a bit more build time).
+      - name: Cache VitePress build cache
+        uses: actions/cache@v6
+        with:
+          path: .vitepress/cache
+          key: vitepress-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            vitepress-cache-${{ runner.os }}-
 
       - name: Build
         run: pnpm build
