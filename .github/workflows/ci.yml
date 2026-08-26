@@ -16,28 +16,16 @@ jobs:
       - name: Set up `pnpm`
         uses: pnpm/action-setup@v6
 
-      # Install Node.js and cache the pnpm store via cache: pnpm.
-      # When dependencies (pnpm-lock.yaml) are unchanged, the cache is hit 
-      # and the whole dependency download is skipped.
+      # Install Node.js and cache pnpm's package store.
       - name: Setup Node.js with pnpm cache
         uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: pnpm
 
-      # Install dependencies from the lockfile 
-      # so CI matches the local environment (near-instant when deps are unchanged).
-      - name: Install dependencies
+      # CI only builds the root VitePress site, so child projects are not installed.
+      - name: Install root dependencies
         run: pnpm install --frozen-lockfile
-
-      # Cache VitePress's Vite pre-bundled deps (saves a bit more build time).
-      - name: Cache VitePress build cache
-        uses: actions/cache@v6
-        with:
-          path: .vitepress/cache
-          key: vitepress-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
-          restore-keys: |
-            vitepress-cache-${{ runner.os }}-
 
       - name: Build
         run: pnpm build
